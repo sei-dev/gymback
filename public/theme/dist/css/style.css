@@ -281,15 +281,12 @@ select[name="mySeason"]::-ms-expand {
 
 .todo-list > li span {
   display: inline-block;
-  min-width: 200px;
+  min-width: 100px;
   text-align: left;
 }
 
-.todo-list > li:nth-child(even) {
+.bgr-every-second > div:nth-child(even) {
 	background-color:#eee
 }
 
-.todo-list > li .label {
-  margin-left: 10px;
-  font-size: 11px;
-}
+
