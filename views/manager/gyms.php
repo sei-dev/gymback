@@ -1,24 +1,25 @@
 <h3 class="heading-style"><?=$this->translate("Gyms");?></h3>
 
 <div class="box box-primary">
-    <div class="box-body">
-        <ul class="todo-list ui-sortable">
+    <div class="box-body bgr-every-second">
+    
         <?php foreach ($this->items as $one):?>
-        <li>
+        
             <!-- <span class="">
             <i class="fa fa-ellipsis-v"></i>
             </span> -->
-            <span class="text"><?=$one["name"]?></span>
-            <span class="label label-success"><?=$one["address"]?></span>
-            <span class="label label-success"><?=$one["city"]?></span>
-            <small class="label label-danger"><i class="fa fa-clock-o"></i> <?=$this->humanReadable($one["created_on"])?></small>
-            <div class="tools">
+            <div class="row">
+            <div class="col-md-3"><?=$one["name"]?></div>
+            <div class="col-md-3"><?=$one["address"]?></div>
+            <div class="col-md-3"><?=$one["city"]?></div>
+            <div class="col-md-2 label label-danger"><i class="fa fa-clock-o"></i> <?=$this->humanReadable($one["created_on"])?></div>
+            <div class="col-md-1 tools">
                 <a href="/manager/editgym?id=<?=$one["id"]?>"><i class="fa fa-edit"></i></a>
                 <i class="fa fa-trash-o"></i>
             </div>
-        </li>
+        	</div>
         <?php endforeach;?>
-        </ul>
+        
     </div>
     
     <div class="box-footer" style="">

@@ -1,26 +1,24 @@
 <h3 class="heading-style"><?=$this->translate("Invoices");?></h3>
 
 <div class="box box-primary">
-    <div class="box-body">
-        <ul class="todo-list ui-sortable">
+    <div class="box-body bgr-every-second">
         <?php foreach ($this->items as $one):?>
-        <li>
             <!-- <span class="">
             <i class="fa fa-ellipsis-v"></i>
             </span> -->
-            <span class="text"><?=$one["trainer_first_name"]. " " . $one["trainer_last_name"]?></span>
-            <span class="label label-success"><?=$this->formatInvoice($one["id"])?></span>
-            <span class="label label-success"><?=$this->humanReadable($one["paid_on"])?></span>
-            <span class="label label-success"><?=$one["name"]?></span>
-            <span class="label label-success"><?=$this->formatPrice($one["price"])?></span>
-            <span class="label label-success"><?=$one["client_first_name"]. " " . $one["client_last_name"]?></span>
-            <small class="label label-danger"><i class="fa fa-clock-o"></i> <?=$this->humanReadable($one["created_on"])?></small>
-            <div class="tools">
+            <div class="row">
+            <div class="col-md-2"><?=$one["trainer_first_name"]. " " . $one["trainer_last_name"]?></div>
+            <div class="col-md-2"><?=$this->formatInvoice($one["id"])?></div>
+            <div class="col-md-2"><?=$this->humanReadable($one["paid_on"])?></div>
+            <div class="col-md-2"><?=$one["name"]?></div>
+            <div class="col-md-1 label label-success"><?=$this->formatPrice($one["price"])?></div>
+            <div class="col-md-1 label label-success"><?=$one["client_first_name"]. " " . $one["client_last_name"]?></div>
+            <div class="col-md-1 label label-danger"><i class="fa fa-clock-o"></i> <?=$this->humanReadable($one["created_on"])?></div>
+            <div class="col-md-1 tools">
                 <i class="fa fa-trash-o"></i>
             </div>
-        </li>
+            </div>
         <?php endforeach;?>
-        </ul>
     </div>
     
     <div class="box-footer" style="">
