@@ -6,6 +6,7 @@ use SEI\Auth;
 use MODELS\Gyms;
 use MODELS\Trainings;
 use MODELS\Measurements;
+use MODELS\Invoices;
 
 class Manager extends Controller {
     
@@ -318,6 +319,34 @@ class Manager extends Controller {
          
          //Render and pass data to the view
          echo $this->render->view('manager/editmeasurements', $data);
+     }
+     
+     /**
+      * INVOICES
+      */
+     
+     
+     /**
+      *
+      * @return string
+      */
+     public function invoices(){
+         
+         
+         $model = new Invoices();
+         
+         
+         $data["items"] =  $model->getAll($_GET["page"]??1);
+         
+         
+         $count = $model->count();
+         $data["pagination"] = $this->getPagination("/manager/index", $count, 10);
+         $data["count"] = $count;
+         
+         //die(var_dump($data["users"]));
+         
+         //Render and pass data to the view
+         echo $this->render->view('manager/invoices', $data);
      }
     
     /**

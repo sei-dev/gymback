@@ -161,7 +161,13 @@ class Render {
         return date_format($date,"d. m. Y");
     }
     
+    public function formatPrice($priceString){
+        return number_format($priceString, 2, '.', ',');
+    }
     
+    public function formatInvoice($id){
+        return "#".str_pad($id, 5, "0", STR_PAD_LEFT);
+    }
     
     public function translate($string){
         return $string;
