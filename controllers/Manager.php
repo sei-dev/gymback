@@ -355,5 +355,5 @@ class Manager extends Controller {
     public function __destruct(){
         
     }
-    
+
 }

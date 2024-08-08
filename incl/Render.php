@@ -156,6 +156,11 @@ class Render {
     
     
     
+    
+    /**
+     * VIEW HELPERS
+     */
+    
     public function humanReadable($dateString){
         $date=date_create($dateString);
         return date_format($date,"d. m. Y");
