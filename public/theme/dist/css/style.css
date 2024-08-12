@@ -288,5 +288,14 @@ select[name="mySeason"]::-ms-expand {
 .bgr-every-second > div:nth-child(even) {
 	background-color:#eee
 }
-
+.row .col-md-2, .row .col-md-1, .row .col-md-3  {
+	color: #626262;
+	margin-top:10px;
+	margin-bottom:10px;
+}
+.row{
+	padding-top: 5px;
+}
+.circular--portrait { display:inline-block; position: relative; width: 20px; height: 20px; overflow: hidden; border-radius: 50%; } 
+.circular--portrait img { width: 100%; height: auto; }
 
