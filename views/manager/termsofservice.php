@@ -6,7 +6,7 @@
     </div>
     
     <div class="box-footer" style="">
-    <h2>USLOVI KORIŠĆENJA</h2>
+    <h2 class="heading-style">USLOVI KORIŠĆENJA</h2>
     
     <br><br>
     
@@ -28,7 +28,7 @@
             5. Ograničenje odgovornosti<br><br>
             "Personalni trener" neće biti odgovoran za bilo kakve direktne ili indirektne štete nastale korišćenjem informacija ili usluga sa sajta. Svi programi vežbanja sprovode se na vlastitu odgovornost korisnika.</p>
             
-            <h2>POLITIKA PRIVATNOSTI</h2>
+            <h2 class="heading-style">POLITIKA PRIVATNOSTI</h2>
             
             <br><br>
             
