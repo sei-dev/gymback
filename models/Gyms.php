@@ -43,8 +43,8 @@ class Gyms extends ModelAbstract implements ModelInterface
 	    
 	    $start = ($page-1) * $perPage;
 		
-		$sQuery = "SELECT *
-				FROM ".self::getTablePrefix().$this->table."
+		$sQuery = "SELECT gyms.*, cities.city
+				FROM gyms LEFT JOIN cities ON gyms.city_id = cities.id
 				WHERE 1
                 LIMIT {$start}, {$perPage}
 				";
