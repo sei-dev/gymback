@@ -6,6 +6,7 @@
     	<!--<a class="menuLinkProper" href="/manager/trainers" title="Trainers"><i class="fa fa-arrow-right"></i><span>Trainers</span></a>-->
     	<!--<a class="menuLinkProper" href="/manager/invoices" title="Invoices"><i class="fa fa-arrow-right"></i><span>Invoices</span></a>-->
  		<a class="menuLinkProper" href="/manager/trainings" title="Invoices"><i class="fa fa-arrow-right"></i><span>Trainings</span></a>
- 		<a class="menuLinkProper" href="/manager/measurements" title="Invoices"><i class="fa fa-arrow-right"></i><span>Measurements</span></a>  
+ 		<a class="menuLinkProper" href="/manager/measurements" title="Invoices"><i class="fa fa-arrow-right"></i><span>Measurements</span></a>
+ 		<a class="menuLinkProper" href="/manager/tof" title="Invoices"><i class="fa fa-arrow-right"></i><span>Terms Of Service</span></a>  
     </li>
 </ul>
