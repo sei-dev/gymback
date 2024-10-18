@@ -1,26 +1,23 @@
 <h3 class="heading-style"><?=$this->translate("Trainings");?></h3>
 
 <div class="box box-primary">
-    <div class="box-body">
-        <ul class="todo-list ui-sortable">
+    <div class="box-body bgr-every-second">
+
         <?php foreach ($this->items as $one):?>
-        <li>
-            <!-- <span class="">
-            <i class="fa fa-ellipsis-v"></i>
-            </span> -->
-            <span class="text"><?=$one["name"]?></span>
-            <span class="label label-success"><?=$one["gym"]?></span>
-            <span class="label label-success"><?php if($one["is_group"]==0||$one["is_group"]=="0") echo $this->translate("Independent"); else echo $this->translate("Group");?></span>
-            <span class="label label-success"><?=$one["date"]?></span>
-            <span class="label label-success"><?=$one["time"]?></span>
-            <small class="label label-danger"><i class="fa fa-clock-o"></i> <?=$this->humanReadable($one["created_at"])?></small>
-            <div class="tools">
+			<div class="row">
+            <div class="col-md-2"><?=$one["name"]?></div>
+            <div class="col-md-2 label label-success"><?=$one["gym"]?></div>
+            <div class="col-md-2"><?php if($one["is_group"]==0||$one["is_group"]=="0") echo $this->translate("Independent"); else echo $this->translate("Group");?></div>
+            <div class="col-md-2"><?=$this->humanReadable($one["date"])?></div>
+            <div class="col-md-2"><?=$one["time"]?></div>
+            <div class="col-md-1 label label-danger"><i class="fa fa-clock-o"></i> <?=$this->humanReadable($one["created_at"])?></div>
+            <div class="col-md-1 tools">
                 <!-- <a href="/manager/edittraining?id=<?=$one["id"]?>"><i class="fa fa-edit"></i></a> -->
                 <i class="fa fa-trash-o"></i>
             </div>
-        </li>
+            </div>
         <?php endforeach;?>
-        </ul>
+
     </div>
     
     <div class="box-footer" style="">
