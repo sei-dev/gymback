@@ -20,7 +20,7 @@
             <span class="glyphicon glyphicon-lock form-control-feedback"></span>
         </div>
         <div class="row">
-            <div class="col-xs-4">
+            <div class="col-xs-8">
                <a href = "/tof"><?=$this->translate("Terms of Service");?></a> 
             </div>
             
