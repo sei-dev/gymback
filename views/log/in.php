@@ -21,7 +21,7 @@
         </div>
         <div class="row">
             <div class="col-xs-8">
-               <a href = "/tof"><?=$this->translate("Terms of Service");?></a> 
+               <a href = "log/tof"><?=$this->translate("Terms of Service");?></a> 
             </div>
             
             <div class="col-xs-4">
