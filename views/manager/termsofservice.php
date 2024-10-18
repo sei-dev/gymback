@@ -9,7 +9,7 @@
 		<br>
 		<br>
 
-		<p>
+		<p style="margin-left:20px; margin-right:20px;">
 			Dobrodošli na našu web stranicu. Molimo vas da pažljivo pročitate ove
 			Uslove korišćenja pre nego što počnete koristiti naš sajt.
 			Korišćenjem sajta, saglasni ste sa Uslovima korišćenja i našom
@@ -47,7 +47,7 @@
 		<br>
 		<br>
 
-		<p>
+		<p style="margin-left:20px; margin-right:20px;">
 			Ova Politika privatnosti objašnjava kako prikupljamo, koristimo i
 			štitimo vaše podatke dok koristite našu web stranicu i usluge.<br>
 			<br> 1. Koje podatke prikupljamo?<br>
@@ -84,7 +84,6 @@
 			<br> Ako imate bilo kakva pitanja u vezi sa našim Uslovima korišćenja
 			ili Politikom privatnosti, slobodno nas kontaktirajte na [email
 			adresa]
-		</p>
 		</p>
 	</div>
 
