@@ -77,6 +77,11 @@ class Log extends Controller {
          $this->redirect("/log/in");
      }
      
+     public function tof(){
+         
+         echo $this->render->view('manager/termsofservice');;
+     }
+     
      public function out(){
          
          $auth = new Auth($this->getDbAdapter());
