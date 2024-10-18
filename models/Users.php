@@ -43,10 +43,9 @@ class Users extends ModelAbstract implements ModelInterface
 	    
 	    $start = ($page-1) * $perPage;
 		
-		$sQuery = "SELECT *
-				FROM ".self::getTablePrefix()."users
-				WHERE 1
-                LIMIT {$start}, {$perPage}
+		$sQuery = "SELECT users.*, cities.city as location FROM users LEFT JOIN cities ON users.city_id = cities.id
+				   WHERE 1
+                   LIMIT {$start}, {$perPage}
 				";
 		return $this->fetchAll($sQuery);
 	}
