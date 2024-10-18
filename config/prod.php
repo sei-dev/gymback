@@ -1,7 +1,7 @@
 <?php 
 return [
-    'host' => 'localhost',
-    'username' => 'root',
-    'password' => '',
-    'dbname' => 'gym'
+    'host' => '64.225.9.163',
+    'username' => 'ckqyuwbdrh',
+    'password' => 'ckqyuwbdrh',
+    'dbname' => 'ckqyuwbdrh'
 ];
