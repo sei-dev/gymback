@@ -20,8 +20,8 @@
             <span class="glyphicon glyphicon-lock form-control-feedback"></span>
         </div>
         <div class="row">
-            <div class="col-xs-8">
-               <button type="submit" class="btn btn-primary btn-block btn-flat"><?=$this->translate("Sign In");?></button> 
+            <div class="col-xs-4">
+               <a href = "/tof"><?=$this->translate("Terms of Service");?></a> 
             </div>
             
             <div class="col-xs-4">
