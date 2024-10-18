@@ -21,7 +21,7 @@
         </div>
         <div class="row">
             <div class="col-xs-8">
-                
+               <button type="submit" class="btn btn-primary btn-block btn-flat"><?=$this->translate("Sign In");?></button> 
             </div>
             
             <div class="col-xs-4">
