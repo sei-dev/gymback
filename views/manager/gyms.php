@@ -11,7 +11,7 @@
                 	<div class="col-md-1">
                 		<button name="submit" type="submit" class="btn btn-primary btn-block btn-flat"><i class="fa fa-search"></i></button>
                 	</div>
-                
+                </div>
 </form>
 </div>
 
