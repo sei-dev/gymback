@@ -159,9 +159,9 @@ class Manager extends Controller
         $model = new Gyms();
         
         $data["items"] = $model->searchGym($param, $_GET["page"] ?? 1);
-        $count = $model->count();
+        $count = sizeof($data["items"]);
         $data["pagination"] = $this->getPagination("/manager/gyms", $count, 10);
-        $data["count"] = $count;
+        $data["count"] = sizeof($data["items"]);
         
         
         echo $this->render->view('manager/gyms', $data);
