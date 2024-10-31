@@ -26,7 +26,7 @@
     </div>
     
 	<div class="box-footer clearfix no-border">
-    <button type="button" class="btn btn-default pull-right"><i class="fa fa-plus"></i> Add item</button>
+    <button type="button" class="btn btn-default pull-right"><i class="fa fa-plus"></i><?=$this->translate("Add");?></button>
     </div>
     
     
