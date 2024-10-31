@@ -9,7 +9,7 @@
             <i class="fa fa-ellipsis-v"></i>
             </span> -->
             <div class="row">
-            <div class="col-md-3"><?=$one["city"]?></div>
+            <div class="col-md-11"><?=$one["city"]?></div>
             <div class="col-md-1 tools">
                 <i class="fa fa-trash-o"></i>
             </div>
