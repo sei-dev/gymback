@@ -1,7 +1,7 @@
 <h3 class="heading-style"><?=$this->translate("Cities");?></h3>
 
 <div class="box box-primary">
-    <div class="box-body bgr-every-second">
+    <div class="box-body bg-every-second">
     
         <?php foreach ($this->items as $one):?>
         
@@ -26,7 +26,7 @@
     </div>
     
 	<div class="box-footer clearfix no-border">
-    <button type="button" class="btn btn-default pull-right"><i class="fa fa-plus"></i><?=$this->translate("Add");?></button>
+    <button type="button" class="btn btn-default pull-left"><i class="fa fa-plus"></i><?=$this->translate("Add");?></button>
     </div>
     
     
