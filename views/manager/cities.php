@@ -26,7 +26,7 @@
     </div>
     
 	<div class="box-footer clearfix no-border">
-    <button href="/manager/addcity" type="button" class="btn btn-default pull-left"><i class="fa fa-plus"></i><?=$this->translate("Add");?></button>
+    <a href="/manager/addcity" type="button" class="btn btn-default pull-left"><i class="fa fa-plus"></i><?=$this->translate("Add");?></a>
     </div>
     
     
