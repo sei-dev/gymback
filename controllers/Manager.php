@@ -194,7 +194,6 @@ class Manager extends Controller
             $address = $_POST["address"];
             $phone = $_POST["phone"];
             
-            die(var_dump($city_id));
             
             $model->addGym($name, $address, $city_id, $phone);
             
