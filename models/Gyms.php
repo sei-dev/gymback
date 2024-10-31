@@ -63,7 +63,7 @@ class Gyms extends ModelAbstract implements ModelInterface
 	public function addGym(string $name, string $address, string $city_id, string $phone) {
 	    
 	    $sQuery = "INSERT INTO gyms (name, address, city_id, phone)
-				VALUES ({$name},{$address},{$city_id},{$phone});
+				VALUES ('{$name}','{$address}','{$city_id}','{$phone}');
 				";
 	    return $this->fetchAll($sQuery);
 	}
