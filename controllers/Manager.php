@@ -171,7 +171,40 @@ class Manager extends Controller
         }
         
         
-        echo $this->render->view('manager/addcity');
+        echo $this->render->view('manager/addcity', $data);
+    }
+    
+    public function addGym()
+    {
+        $model = new Cities();
+        
+        $data['cities'] = $model->getAll();
+        
+        echo $this->render->view('manager/addgym', $data);
+    }
+    
+    public function insertgym()
+    {
+        $model = new Cities();
+        
+        if ($this->isPost()) {
+            
+            $city_id = $_POST["city"];
+            $name = $_POST["name"];
+            $address = $_POST["address"];
+            $phone = $_POST["phone"];
+            
+            die(var_dump($city_id));
+            
+            $model->addCity($name);
+            
+            $this->redirect("/manager/cities");
+        } else if ($this->isGet()) {
+            $data["messages"] = @$_SESSION["messages"];
+        }
+        
+        
+        echo $this->render->view('manager/addcity', $data);
     }
 
     public function updategym()
