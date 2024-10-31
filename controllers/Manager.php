@@ -148,6 +148,12 @@ class Manager extends Controller
         // Render and pass data to the view
         echo $this->render->view('manager/editgym', $data);
     }
+    
+    public function addcity()
+    {
+
+        echo $this->render->view('manager/editgym', $data);
+    }
 
     public function updategym()
     {
