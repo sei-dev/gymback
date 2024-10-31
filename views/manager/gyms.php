@@ -1,5 +1,6 @@
 <h3 class="heading-style"><?=$this->translate("Gyms");?></h3>
 
+<div class="box">
 <form class="req-forms" id="search_form" method="post" action="searchgym" enctype="multipart/form-data">
 				<div class="row">
 				<div class="col-md-12">
@@ -9,6 +10,7 @@
                 	</div>
                 </div>
 </form>
+</div>
 
 <div class="box box-primary">
     <div class="box-body bgr-every-second">
