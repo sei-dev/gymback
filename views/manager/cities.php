@@ -10,7 +10,6 @@
             </span> -->
             <div class="row">
             <div class="col-md-3"><?=$one["city"]?></div>
-            <div class="col-md-2 label label-danger"><i class="fa fa-clock-o"></i> <?=$this->humanReadable($one["created_on"])?></div>
             <div class="col-md-1 tools">
                 <i class="fa fa-trash-o"></i>
             </div>
