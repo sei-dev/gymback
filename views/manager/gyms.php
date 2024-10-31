@@ -2,7 +2,7 @@
 
 <div class="box">
 <form class="req-forms" id="search_form" method="post" action="searchgym" enctype="multipart/form-data">
-				<div class="row">
+				<div class="row justify-content-center align-self-center">
 				<div class="col-md-11">
 					<div class="form-group">
                 		<input placeholder="<?=$this->translate("Search");?>" class="form-control" type="text" name="param" value=""/>
