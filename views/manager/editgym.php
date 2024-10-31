@@ -25,10 +25,19 @@
 				<div class="col-md-12">
 					<div class="form-group">
                 		<label class="text-primary"><?=$this->translate("City");?></label>
-                		<input placeholder="<?=$this->translate("City");?>" class="form-control" type="text" name="city" value="<?=$this->gym["city"];?>"/>
+                		<select placeholder="<?=$this->translate("City");?>" class="form-control" type="text" name="city">
+                		<?php foreach ($this->cities as $one):?>
+                			<?php if($one['id']==$gym['city_id']){ ?>
+								<option value="<?=$one["id"]?>" selected><?=$one["city"]?></option>
+							<?php }else{ ?>
+                				<option value="<?=$one["id"]?>"><?=$one["city"]?></option>
+                			<?php } ?>
+                		<?php endforeach;?>
+                		</select>
                 	</div>
                 </div>
-            </div>
+                
+			</div>
             
             <div class="row">
 				<div class="col-md-12">

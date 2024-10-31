@@ -135,8 +135,10 @@ class Manager extends Controller
         $id = intval($_GET["id"]);
 
         $model = new Gyms();
+        $city_model = new Cities();
 
         $data["gym"] = $model->getById($id);
+        $data['cities'] = $city_model->getAll();
 
         if ($data["gym"] == false) {
             $this->redirect("/manager/index");
