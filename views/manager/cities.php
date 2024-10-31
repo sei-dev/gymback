@@ -20,15 +20,14 @@
     
     <div class="box-footer" style="">
         <i class="ion ion-clipboard">Total: <?=$this->count?></i>
-        <button type="button" class="btn btn-default pull-right"><i class="fa fa-plus"></i> Add item</button>
         <div class="box-tools pull-right">
             <?php echo $this->pagination?>
         </div>
     </div>
     
-    <!-- <div class="box-footer clearfix no-border">
+	<div class="box-footer clearfix no-border">
     <button type="button" class="btn btn-default pull-right"><i class="fa fa-plus"></i> Add item</button>
-    </div> -->
+    </div>
     
     
     
