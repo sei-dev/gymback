@@ -3,12 +3,11 @@
 <div class="box">
 <form class="req-forms" id="search_form" method="post" action="searchgym" enctype="multipart/form-data">
 				<div class="row">
-				<div class="col-md-9">
+				<div class="col-md-10">
 					<div>
                 		<input placeholder="<?=$this->translate("Search");?>" class="form-control" type="text" name="param" value=""/>
                 	</div>
                 	</div>
-                	<div class="col-md-1"></div>
                 	<div class="col-md-2">
                 		<button name="submit" type="submit" class="btn btn-primary btn-block btn-flat"><i class="fa fa-search"></i></button>
                 	</div>
