@@ -30,6 +30,15 @@
                 </div>
             </div>
             
+            <div class="row">
+				<div class="col-md-12">
+					<div class="form-group">
+                		<label class="text-primary"><?=$this->translate("Phone");?></label>
+                		<input placeholder="<?=$this->translate("Phone");?>" class="form-control" type="text" name="phone" value="<?=$this->gym["phone"];?>"/>
+                	</div>
+                </div>
+            </div>
+            
             <div style="display: none" class="row">
 				<div class="col-md-12">
 					<div class="form-group">

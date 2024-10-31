@@ -10,8 +10,9 @@
             </span> -->
             <div class="row">
             <div class="col-md-3"><?=$one["name"]?></div>
-            <div class="col-md-3"><?=$one["address"]?></div>
-            <div class="col-md-3"><?=$one["city"]?></div>
+            <div class="col-md-2"><?=$one["address"]?></div>
+            <div class="col-md-2"><?=$one["city"]?></div>
+            <div class="col-md-2"><?=$one["phone"]?></div>
             <div class="col-md-2 label label-danger"><i class="fa fa-clock-o"></i> <?=$this->humanReadable($one["created_on"])?></div>
             <div class="col-md-1 tools">
                 <a href="/manager/editgym?id=<?=$one["id"]?>"><i class="fa fa-edit"></i></a>
