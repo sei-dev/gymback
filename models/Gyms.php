@@ -72,7 +72,8 @@ class Gyms extends ModelAbstract implements ModelInterface
 	    
 	    $start = ($page-1) * $perPage;
 	    
-	    $sQuery = "SELECT * FROM gyms WHERE name LIKE '%{$param}%' LIMIT {$start}, {$perPage};
+	    $sQuery = "SELECT gyms.*, cities.city
+				FROM gyms LEFT JOIN cities ON gyms.city_id = cities.id WHERE name LIKE '%{$param}%' LIMIT {$start}, {$perPage};
 				";
 	    return $this->fetchAll($sQuery);
 	}
