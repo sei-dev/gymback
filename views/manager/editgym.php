@@ -27,7 +27,7 @@
                 		<label class="text-primary"><?=$this->translate("City");?></label>
                 		<select placeholder="<?=$this->translate("City");?>" class="form-control" type="text" name="city">
                 		<?php foreach ($this->cities as $one):?>
-                			<?php if($one['id']==$gym['city_id']){ ?>
+                			<?php if($one['id']==$this->gym['city_id']){ ?>
 								<option value="<?=$one["id"]?>" selected><?=$one["city"]?></option>
 							<?php }else{ ?>
                 				<option value="<?=$one["id"]?>"><?=$one["city"]?></option>
