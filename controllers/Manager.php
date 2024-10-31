@@ -159,7 +159,7 @@ class Manager extends Controller
         $data['gyms'] = $model->searchGym($param);
         
         $count = $model->count();
-        $data["pagination"] = $this->getPagination("/manager/index", $count, 10);
+        $data["pagination"] = $this->getPagination("/manager/gyms", $count, 10);
         $data["count"] = $count;
         
         
