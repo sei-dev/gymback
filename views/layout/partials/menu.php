@@ -7,6 +7,7 @@
     	<!--<a class="menuLinkProper" href="/manager/invoices" title="Invoices"><i class="fa fa-arrow-right"></i><span>Invoices</span></a>-->
  		<a class="menuLinkProper" href="/manager/trainings" title="Trainings"><i class="fa fa-arrow-right"></i><span>Trainings</span></a>
  		<a class="menuLinkProper" href="/manager/measurements" title="Measurements"><i class="fa fa-arrow-right"></i><span>Measurements</span></a>
+ 		<a class="menuLinkProper" href="/manager/cities" title="Cities"><i class="fa fa-arrow-right"></i><span>Cities</span></a>
  		<!--<a class="menuLinkProper" href="/manager/tof" title="TermsOfService"><i class="fa fa-arrow-right"></i><span>Terms Of Service</span></a> --> 
     </li>
 </ul>

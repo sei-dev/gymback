@@ -4,6 +4,7 @@ use SEI\Auth;
 use MODELS\Gyms;
 use MODELS\Trainings;
 use MODELS\Measurements;
+use MODELS\Cities;
 
 class Manager extends Controller
 {
@@ -109,6 +110,21 @@ class Manager extends Controller
         // Render and pass data to the view
         echo $this->render->view('manager/gyms', $data);
     }
+    
+    public function cities()
+    {
+        $model = new Cities();
+        
+        $data["items"] = $model->getAll($_GET["page"] ?? 1);
+        $count = $model->count();
+        $data["pagination"] = $this->getPagination("/manager/cities", $count, 10);
+        $data["count"] = $count;
+        
+        // die(var_dump($data["users"]));
+        
+        // Render and pass data to the view
+        echo $this->render->view('manager/gyms', $data);
+    }
 
     /**
      *
@@ -197,7 +213,7 @@ class Manager extends Controller
         }
 
         $count = $model->count();
-        $data["pagination"] = $this->getPagination("/manager/index", $count, 10);
+        $data["pagination"] = $this->getPagination("/manager/trainings", $count, 10);
         $data["count"] = $count;
 
         // die(var_dump($data["items"]));
