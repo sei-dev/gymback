@@ -68,6 +68,13 @@ class Gyms extends ModelAbstract implements ModelInterface
 	    return $this->fetchAll($sQuery);
 	}
 	
+	public function searchGym(string $param) {
+	    
+	    $sQuery = "SELECT * FROM gyms WHERE name LIKE '%{$param}%';
+				";
+	    return $this->fetchAll($sQuery);
+	}
+	
 	/**
 	 *
 	 * @param string $email

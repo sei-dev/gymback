@@ -151,6 +151,21 @@ class Manager extends Controller
         echo $this->render->view('manager/editgym', $data);
     }
     
+    public function searchGym(){
+        $param = $_GET["param"];
+        
+        $model = new Gyms();
+        
+        $data['gyms'] = $model->searchGym($param);
+        
+        $count = $model->count();
+        $data["pagination"] = $this->getPagination("/manager/index", $count, 10);
+        $data["count"] = $count;
+        
+        
+        echo $this->render->view('manager/gyms', $data);
+    }
+    
     public function addcity()
     {
   
