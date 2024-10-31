@@ -4,7 +4,7 @@
 				<div class="row">
 				<div class="col-md-12">
 					<div class="form-group">
-                		<input placeholder="<?=$this->translate("Search");?>" class="form-control" type="text" name="param" value="">
+                		<input placeholder="<?=$this->translate("Search");?>" class="form-control" type="text" name="param" value=""/>
                 		<button name="submit" type="submit" class="btn btn-primary btn-block btn-flat"><i class="fa fa-search"></i></button>
                 	</div>
                 </div>
