@@ -7,7 +7,7 @@
 			<div class="row">
             <div class="col-md-2"><?=$one["name"]?></div>
             <div class="col-md-2 label label-success"><?=$one["gym"]?></div>
-            <div class="col-md-2"><?php if($one["is_group"]==0||$one["is_group"]=="0") echo $this->translate("Independent"); else echo $this->translate("Group");?></div>
+            <div class="col-md-2"><?php if($one["is_group"]==0||$one["is_group"]=="0") echo $this->translate("Individual"); else echo $this->translate("Group");?></div>
             <div class="col-md-2"><?=$this->humanReadable($one["date"])?></div>
             <div class="col-md-2"><?=$one["time"]?></div>
             <div class="col-md-1 label label-danger"><i class="fa fa-clock-o"></i> <?=$this->humanReadable($one["created_at"])?></div>
