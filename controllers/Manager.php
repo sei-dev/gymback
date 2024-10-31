@@ -151,7 +151,26 @@ class Manager extends Controller
     
     public function addcity()
     {
-
+  
+        echo $this->render->view('manager/addcity');
+    }
+    
+    public function insertcity()
+    {
+        $model = new Cities();
+       
+        if ($this->isPost()) {
+            
+            $name = $_POST["city"];
+            
+            $model->addCity($name);
+            
+            $this->redirect("/manager/cities");
+        } else if ($this->isGet()) {
+            $data["messages"] = @$_SESSION["messages"];
+        }
+        
+        
         echo $this->render->view('manager/addcity');
     }
 
