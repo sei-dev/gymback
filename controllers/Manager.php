@@ -152,6 +152,7 @@ class Manager extends Controller
     }
     
     public function searchGym(){
+        
         $param = $_GET["param"];
         
         $model = new Gyms();
