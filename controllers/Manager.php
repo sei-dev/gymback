@@ -123,7 +123,7 @@ class Manager extends Controller
         // die(var_dump($data["users"]));
         
         // Render and pass data to the view
-        echo $this->render->view('manager/gyms', $data);
+        echo $this->render->view('manager/cities', $data);
     }
 
     /**
