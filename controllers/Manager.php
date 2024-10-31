@@ -185,7 +185,7 @@ class Manager extends Controller
     
     public function insertgym()
     {
-        $model = new Cities();
+        $model = new Gyms();
         
         if ($this->isPost()) {
             
@@ -196,15 +196,15 @@ class Manager extends Controller
             
             die(var_dump($city_id));
             
-            $model->addCity($name);
+            $model->addGym($name, $address, $city_id, $phone);
             
-            $this->redirect("/manager/cities");
+            $this->redirect("/manager/gyms");
         } else if ($this->isGet()) {
             $data["messages"] = @$_SESSION["messages"];
         }
         
         
-        echo $this->render->view('manager/addcity', $data);
+        echo $this->render->view('manager/addgym', $data);
     }
 
     public function updategym()
