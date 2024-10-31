@@ -152,7 +152,7 @@ class Manager extends Controller
     public function addcity()
     {
 
-        echo $this->render->view('manager/editgym', $data);
+        echo $this->render->view('manager/editgym');
     }
 
     public function updategym()
