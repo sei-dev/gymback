@@ -30,9 +30,9 @@
         </div>
     </div>
     
-    <!-- <div class="box-footer clearfix no-border">
-    <button type="button" class="btn btn-default pull-right"><i class="fa fa-plus"></i> Add item</button>
-    </div> -->
+    <div class="box-footer clearfix no-border">
+    <a href="/manager/addgym" type="button" class="btn btn-default pull-left"><i class="fa fa-plus"></i><?=$this->translate("Add");?></a>
+    </div>
     
     
     
