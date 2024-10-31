@@ -155,6 +155,8 @@ class Manager extends Controller
         
         $param = $_GET["param"];
         
+        die(var_dump($param));
+        
         $model = new Gyms();
         
         $data['gyms'] = $model->searchGym($param);
