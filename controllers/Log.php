@@ -86,6 +86,9 @@ class Log extends Controller {
          
          $data = $_POST;
          
+         var_dump($data);
+         die();
+         
          echo $this->render->view('manager/success', $data);
      }
      
