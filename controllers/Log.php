@@ -79,7 +79,12 @@ class Log extends Controller {
      
      public function tof(){
          
-         echo $this->render->view('manager/termsofservice');;
+         echo $this->render->view('manager/termsofservice');
+     }
+     
+     public function success(){
+         
+         echo $this->render->view('manager/success');
      }
      
      public function out(){
