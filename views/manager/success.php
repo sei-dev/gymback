@@ -10,7 +10,8 @@
 		<br>
 
 		<p style="margin-left:20px; margin-right:20px;">
-		<?=$this->translate("Payment successfully processed.");?>	
+		<?=$this->translate("Payment successfully processed.");?>
+		<?php var_dump($data);?>	
 		</p>
 	</div>
 
