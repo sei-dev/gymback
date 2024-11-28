@@ -84,12 +84,7 @@ class Log extends Controller {
      
      public function success(){
          
-         $data = $_POST;
-         
-         var_dump($data);
-         die();
-         
-         echo $this->render->view('manager/success', $data);
+         echo $this->render->view('manager/success');
      }
      
      public function out(){
