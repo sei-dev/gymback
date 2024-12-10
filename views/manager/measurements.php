@@ -3,7 +3,7 @@
 <div class="box box-primary">
     <div class="box-body bgr-every-second">
 
-    <div class="row font-weight-bold">
+    <div class="row" style="background-color: #d3d3d3; font-weight: bold;">
         <div class="col-md-2"><?=$this->translate("Trainer Name")?></div>
         <div class="col-md-2"><?=$this->translate("Client Name")?></div>
         <div class="col-md-2"><?=$this->translate("Height")?></div>
