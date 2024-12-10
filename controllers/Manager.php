@@ -39,8 +39,8 @@ class Manager extends Controller
         $data["count"] = $count;
         
         array_walk($data["users"], function (&$a) {
-            if ($this->isFileExists(self::DIR_USERS, $a["client_id"])) {
-                $a['image'] = $this->domain . "/images/users/" . $a["client_id"] . ".png?r=" . rand(0, 100000);
+            if ($this->isFileExists(self::DIR_USERS, $a["id"])) {
+                $a['image'] = $this->domain . "/images/users/" . $a["id"] . ".png?r=" . rand(0, 100000);
             } else {
                 $a['image'] = $this->domain . "/images/users/logo.png";
             }
@@ -189,8 +189,8 @@ class Manager extends Controller
         $data["count"] = $count;
 
         array_walk($data["users"], function (&$a) {
-            if ($this->isFileExists(self::DIR_USERS, $a["client_id"])) {
-                $a['image'] = $this->domain . "/images/users/" . $a["client_id"] . ".png?r=" . rand(0, 100000);
+            if ($this->isFileExists(self::DIR_USERS, $a["id"])) {
+                $a['image'] = $this->domain . "/images/users/" . $a["id"] . ".png?r=" . rand(0, 100000);
             } else {
                 $a['image'] = $this->domain . "/images/users/logo.png";
             }
