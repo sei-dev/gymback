@@ -1627,6 +1627,10 @@ a.bg-info:focus, a.bg-info:hover {
 	background-color: #afd9ee
 }
 
+.bgr-every-second .row:nth-child(2n) {
+    background-color: #ecf0f5;
+}
+
 .bg-warning {
 	background-color: #fcf8e3
 }
