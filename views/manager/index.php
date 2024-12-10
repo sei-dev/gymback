@@ -20,7 +20,7 @@
         
         <?php foreach ($this->users as $one):?>
         <div class="row">
-            <div class="col-md-1"><span class="circular--portrait"> <img src="<?= !empty($one["image"]) ? $one["image"] : '/images/ikonica.ico'; ?>" /></span></div>
+            <div class="col-md-1"><span class="circular--portrait"> <img src="<?= !empty($one["image"]) ? $one["image"] : '/images/blank.webp'; ?>" /></span></div>
             <div class="col-md-2"><?=$one["first_name"]?> <?=$one["last_name"]?></div>
             <div class="col-md-2"><?=$one["email"]?></div>
             <div class="col-md-2 text "><?=$one["phone"]?></div>
