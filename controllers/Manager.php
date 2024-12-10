@@ -11,6 +11,7 @@ class Manager extends Controller
 
     const DIR_USERS = "users";
     const DIR_UPLOADS = __DIR__ . "/../../images/";
+    protected $domain = "https://phpstack-1301327-4919665.cloudwaysapps.com/";
     
     /**
      * On Construct call parent construct
