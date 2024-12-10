@@ -11,7 +11,7 @@ class Manager extends Controller
 
     const DIR_USERS = "users";
     const DIR_UPLOADS = __DIR__ . "/../../images/";
-    protected $domain = "https://phpstack-1301327-4919665.cloudwaysapps.com/";
+    //protected $domain = "https://phpstack-1301327-4919665.cloudwaysapps.com/";
     
     /**
      * On Construct call parent construct
@@ -39,13 +39,13 @@ class Manager extends Controller
         $data["pagination"] = $this->getPagination("/manager/index", $count, 10);
         $data["count"] = $count;
         
-        array_walk($data["users"], function (&$a) {
+        /* array_walk($data["users"], function (&$a) {
             if ($this->isFileExists(self::DIR_USERS, $a["id"])) {
                 $a['image'] = $this->domain . "/images/users/" . $a["id"] . ".png?r=" . rand(0, 100000);
             } else {
                 $a['image'] = $this->domain . "/images/users/logo.png";
             }
-        });
+        }); */
 
         // die(var_dump($data["users"]));
 
@@ -189,13 +189,13 @@ class Manager extends Controller
         $data["pagination"] = $this->getPagination("/manager/index", $count, 10);
         $data["count"] = $count;
 
-        array_walk($data["users"], function (&$a) {
+        /* array_walk($data["users"], function (&$a) {
             if ($this->isFileExists(self::DIR_USERS, $a["id"])) {
                 $a['image'] = $this->domain . "/images/users/" . $a["id"] . ".png?r=" . rand(0, 100000);
             } else {
                 $a['image'] = $this->domain . "/images/users/logo.png";
             }
-        });
+        }); */
         
         /*
          * $data["items"] = $model->searchGym($param, $_GET["page"] ?? 1);
