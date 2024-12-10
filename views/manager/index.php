@@ -9,7 +9,7 @@
                 	</div>
                 	</div>
                 	<div class="col-md-2">
-                		<button name="submit" type="submit" class="btn btn-primary btn-block btn-flat"><i class="fa fa-search"></i></button>
+                		<button name="submit" type="submit" class="btn btn-primary btn-block btn-flat" style="border-radius: 5px;"><i class="fa fa-search"></i></button>
                 	</div>
                 </div>
 </form>
