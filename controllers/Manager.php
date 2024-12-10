@@ -110,18 +110,18 @@ class Manager extends Controller
         // Render and pass data to the view
         echo $this->render->view('manager/gyms', $data);
     }
-    
+
     public function cities()
     {
         $model = new Cities();
-        
+
         $data["items"] = $model->getAll($_GET["page"] ?? 1);
         $count = $model->count();
         $data["pagination"] = $this->getPagination("/manager/cities", $count, 10);
         $data["count"] = $count;
-        
+
         // die(var_dump($data["users"]));
-        
+
         // Render and pass data to the view
         echo $this->render->view('manager/cities', $data);
     }
@@ -150,98 +150,92 @@ class Manager extends Controller
         // Render and pass data to the view
         echo $this->render->view('manager/editgym', $data);
     }
-    
-    public function searchGym(){
-        
+
+    public function searchGym()
+    {
         $param = $_POST["param"];
-        
-        
+
         $model = new Gyms();
-        
+
         $data["items"] = $model->searchGym($param, $_GET["page"] ?? 1);
         $count = sizeof($data["items"]);
         $data["pagination"] = $this->getPagination("/manager/gyms", $count, 10);
         $data["count"] = sizeof($data["items"]);
-        
-        
+
         echo $this->render->view('manager/gyms', $data);
     }
-    
-    public function searchUser(){
-        
+
+    public function searchUser()
+    {
         $param = $_POST["param"];
-        
-        
+
         $model = new Users();
-        
+
         $data["users"] = $model->searchUser($param, $_GET["page"] ?? 1);
         $count = $model->count();
         $data["pagination"] = $this->getPagination("/manager/index", $count, 10);
         $data["count"] = $count;
-        
-        /* $data["items"] = $model->searchGym($param, $_GET["page"] ?? 1);
-        $count = sizeof($data["items"]);
-        $data["pagination"] = $this->getPagination("/manager/gyms", $count, 10);
-        $data["count"] = sizeof($data["items"]); */
-        
-        
+
+        /*
+         * $data["items"] = $model->searchGym($param, $_GET["page"] ?? 1);
+         * $count = sizeof($data["items"]);
+         * $data["pagination"] = $this->getPagination("/manager/gyms", $count, 10);
+         * $data["count"] = sizeof($data["items"]);
+         */
+
         echo $this->render->view('manager/index', $data);
     }
-    
+
     public function addcity()
     {
-  
         echo $this->render->view('manager/addcity');
     }
-    
+
     public function insertcity()
     {
         $model = new Cities();
-       
+
         if ($this->isPost()) {
-            
+
             $name = $_POST["city"];
-            
+
             $model->addCity($name);
-            
+
             $this->redirect("/manager/cities");
         } else if ($this->isGet()) {
             $data["messages"] = @$_SESSION["messages"];
         }
-        
-        
+
         echo $this->render->view('manager/addcity', $data);
     }
-    
+
     public function addGym()
     {
         $model = new Cities();
-        
+
         $data['cities'] = $model->getAll();
-        
+
         echo $this->render->view('manager/addgym', $data);
     }
-    
+
     public function insertgym()
     {
         $model = new Gyms();
-        
+
         if ($this->isPost()) {
-            
+
             $city_id = $_POST["city"];
             $name = $_POST["name"];
             $address = $_POST["address"];
             $phone = $_POST["phone"];
-            
-            
+
             $model->addGym($name, $address, $city_id, $phone);
-            
+
             $this->redirect("/manager/gyms");
         } else if ($this->isGet()) {
             $data["messages"] = @$_SESSION["messages"];
         }
-        
-        
+
         echo $this->render->view('manager/addgym', $data);
     }
 
