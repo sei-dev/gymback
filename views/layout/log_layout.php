@@ -2,8 +2,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>INTECH - Elastic</title>
-<link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico">
+<title>Personalni trener</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/ikonica.ico">
 
 <!--Stylesheets-->
 <link href="/theme/bower_components/bootstrap/dist/css/bootstrap.min.css" media="screen" rel="stylesheet" type="text/css">
