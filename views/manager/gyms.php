@@ -1,6 +1,6 @@
 <h3 class="heading-style"><?=$this->translate("Gyms");?></h3>
 
-<div class="box">
+<div class="box" style="padding: 10px; border-radius: 5px;">
 <form class="req-forms" id="search_form" method="post" action="searchgym" enctype="multipart/form-data">
 				<div class="row">
 				<div class="col-md-10">
@@ -9,7 +9,7 @@
                 	</div>
                 	</div>
                 	<div class="col-md-2">
-                		<button name="submit" type="submit" class="btn btn-primary btn-block btn-flat"><i class="fa fa-search"></i></button>
+                		<button name="submit" type="submit" class="btn btn-primary btn-block btn-flat" style="border-radius: 5px;"><i class="fa fa-search"></i></button>
                 	</div>
                 </div>
 </form>
