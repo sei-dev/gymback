@@ -34,6 +34,14 @@ class Manager extends Controller
         $count = $model->count();
         $data["pagination"] = $this->getPagination("/manager/index", $count, 10);
         $data["count"] = $count;
+        
+        array_walk($data["users"], function (&$a) {
+            if ($this->isFileExists(self::DIR_USERS, $a["client_id"])) {
+                $a['image'] = $this->domain . "/images/users/" . $a["client_id"] . ".png?r=" . rand(0, 100000);
+            } else {
+                $a['image'] = $this->domain . "/images/users/logo.png";
+            }
+        });
 
         // die(var_dump($data["users"]));
 
@@ -170,12 +178,21 @@ class Manager extends Controller
         $param = $_POST["param"];
 
         $model = new Users();
+        
 
         $data["users"] = $model->searchUser($param, $_GET["page"] ?? 1);
         $count = $model->count();
         $data["pagination"] = $this->getPagination("/manager/index", $count, 10);
         $data["count"] = $count;
 
+        array_walk($data["users"], function (&$a) {
+            if ($this->isFileExists(self::DIR_USERS, $a["client_id"])) {
+                $a['image'] = $this->domain . "/images/users/" . $a["client_id"] . ".png?r=" . rand(0, 100000);
+            } else {
+                $a['image'] = $this->domain . "/images/users/logo.png";
+            }
+        });
+        
         /*
          * $data["items"] = $model->searchGym($param, $_GET["page"] ?? 1);
          * $count = sizeof($data["items"]);
