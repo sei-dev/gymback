@@ -87,6 +87,14 @@ class Log extends Controller {
          echo $this->render->view('manager/success');
      }
      
+     public function callback(){
+         
+         var_dump($_POST);
+         die();
+         
+         //echo $this->render->view('manager/success');
+     }
+     
      public function out(){
          
          $auth = new Auth($this->getDbAdapter());
