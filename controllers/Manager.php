@@ -9,6 +9,9 @@ use MODELS\Cities;
 class Manager extends Controller
 {
 
+    const DIR_USERS = "users";
+    const DIR_UPLOADS = __DIR__ . "/../../images/";
+    
     /**
      * On Construct call parent construct
      */
@@ -468,6 +471,11 @@ class Manager extends Controller
         echo $this->render->view('manager/editmeasurements', $data);
     }
 
+    private function isFileExists($dir, $id)
+    {
+        return file_exists(self::DIR_UPLOADS . DIRECTORY_SEPARATOR . $dir . DIRECTORY_SEPARATOR . $id . ".png");
+    }
+    
     /**
      * On destruct
      */
