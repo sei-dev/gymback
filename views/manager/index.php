@@ -1,6 +1,6 @@
 <h3 class="heading-style"><?=$this->translate("Users");?></h3>
 
-<div class="box" style="background-color: #ecf0f5; padding: 10px; border-radius: 5px;">
+<div class="box" style="padding: 10px; border-radius: 5px;">
 <form class="req-forms" id="search_form" method="post" action="searchuser" enctype="multipart/form-data">
 				<div class="row">
 				<div class="col-md-10">
