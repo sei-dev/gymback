@@ -15,7 +15,7 @@
         <div class="col-md-2"><?=$this->translate("Gluteus")?></div>
         <div class="col-md-2"><?=$this->translate("Lower Leg")?></div>
         <div class="col-md-1"><?=$this->translate("Measured At")?></div>
-        <div class="col-md-1"><?=$this->translate("Actions")?></div>
+        <div class="col-md-1"><?=$this->translate("")?></div>
     </div>
 
 
