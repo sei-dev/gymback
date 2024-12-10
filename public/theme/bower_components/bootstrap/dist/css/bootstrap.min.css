@@ -86,6 +86,13 @@ img {
 	border: 0
 }
 
+.col-md-1 img {
+    max-width: 100%; /* Ensures the image does not exceed the column width */
+    height: auto;    /* Maintains the aspect ratio */
+    display: block;  /* Removes extra space below the image */
+    border-radius: 50%; /* Optional: Make it circular if needed */
+}
+
 svg:not(:root) {
 	overflow: hidden
 }
