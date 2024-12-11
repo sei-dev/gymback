@@ -323,7 +323,7 @@ class Manager extends Controller
             $id = $_POST["id"];
             $price = $_POST["price"];
             
-            $model->update($price, $id);
+            $model->updateSubscription($price, $id);
             
             $this->redirect("/manager/subscriptions");
         } else if ($this->isGet()) {
