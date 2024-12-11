@@ -16,10 +16,10 @@
                     }
                     ?>
                 </div>
-                <div class="col-md-3"><?=$one["first_name"]. " " . $one['last_name']?></div>
-                <div class="col-md-1 label label-success">
+                <div class="col-md-4"><?=$one["first_name"]. " " . $one['last_name']?></div>
+                <div class="col-md-2 label label-success">
                     <i class="fa fa-clock-o"></i> <?=$this->humanReadable($one["paid_on"])?></div>
-                <div class="col-md-1 label label-danger">
+                <div class="col-md-2 label label-danger">
                     <i class="fa fa-clock-o"></i> <?=$this->humanReadable($one["valid_until"])?></div>
                 <div class="col-md-1 tools">
                     <!-- <a href="/manager/edittraining?id=<?=$one["id"]?>"><i class="fa fa-edit"></i></a> -->
