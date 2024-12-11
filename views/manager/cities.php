@@ -3,20 +3,18 @@
 <div class="box box-primary">
     <div class="box-body bgr-every-second">
     
-    <div class="row">
-            <div class="col-md-9"><?=$this->items[0]["city"]?></div>
+        <?php foreach ($this->items as $one):?>
+        
+            <!-- <span class="">
+            <i class="fa fa-ellipsis-v"></i>
+            </span> -->
+            <div class="row">
+            <div class="col-md-11"><?=$one["city"]?></div>
             <div class="col-md-1 tools">
                 <i class="fa fa-trash-o"></i>
             </div>
         	</div>
-        	
-        	<div class="row">
-            <div class="col-md-9"><?=$this->items[1]["city"]?></div>
-            <div class="col-md-1 tools">
-                <i class="fa fa-trash-o"></i>
-            </div>
-        	</div>
-    
+        <?php endforeach;?>
         
     </div>
     

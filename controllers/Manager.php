@@ -5,6 +5,7 @@ use MODELS\Gyms;
 use MODELS\Trainings;
 use MODELS\Measurements;
 use MODELS\Cities;
+use MODELS\Subscriptions;
 
 class Manager extends Controller
 {
@@ -175,6 +176,19 @@ class Manager extends Controller
         $data["count"] = sizeof($data["items"]);
 
         echo $this->render->view('manager/gyms', $data);
+    }
+    
+    public function subscriptions()
+    {
+        
+        $model = new Subscriptions();
+        
+        $data["items"] = $model->getAll();
+        $count = sizeof($data["items"]);
+        $data["pagination"] = $this->getPagination("/manager/gyms", $count, 10);
+        $data["count"] = sizeof($data["items"]);
+        
+        echo $this->render->view('manager/subscriptions', $data);
     }
 
     public function searchUser()
