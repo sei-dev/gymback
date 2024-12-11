@@ -4,16 +4,18 @@
     <div class="box-body bgr-every-second">
     
         <div class="row">
-            <div class="col-md-9"><?=$this->items[0]["city"]?></div>
+        	<div class="col-md-4"><?=$this->translate("Monthly subscription")?></div>
+            <div class="col-md-9"><?=$this->items[0]["price"]?></div>
             <div class="col-md-1 tools">
-                <i class="fa fa-trash-o"></i>
+                <a href="/manager/editsub?id=<?=$one["id"]?>"><i class="fa fa-edit"></i></a>
             </div>
         </div>
         	
         <div class="row">
-            <div class="col-md-9"><?=$this->items[1]["city"]?></div>
+        	<div class="col-md-4"><?=$this->translate("Yearly subscription")?></div>
+            <div class="col-md-9"><?=$this->items[1]["price"]?></div>
             <div class="col-md-1 tools">
-                <i class="fa fa-trash-o"></i>
+                <a href="/manager/editsub?id=<?=$one["id"]?>"><i class="fa fa-edit"></i></a>
             </div>
         </div>
         
