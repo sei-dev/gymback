@@ -190,6 +190,25 @@ class Manager extends Controller
         
         echo $this->render->view('manager/subscriptions', $data);
     }
+    
+    public function editsubscription()
+    {
+        
+        $id = intval($_GET["id"]);
+        
+        $model = new Subscriptions();
+        
+        $data["subscription"] = $model->getById($id);
+        
+        if ($data["gym"] == false) {
+            $this->redirect("/manager/index");
+            // throw new Exception("No such user");
+        }
+        
+        
+        
+        echo $this->render->view('manager/editsubscription', $data);
+    }
 
     public function searchUser()
     {
@@ -293,6 +312,25 @@ class Manager extends Controller
         }
 
         echo $this->render->view('manager/editgym', $data);
+    }
+    
+    public function updatesubscription()
+    {
+        $model = new Subscriptions();
+        
+        if ($this->isPost()) {
+            
+            $id = $_POST["id"];
+            $price = $_POST["price"];
+            
+            $model->update($price, $id);
+            
+            $this->redirect("/manager/subscriptions");
+        } else if ($this->isGet()) {
+            $data["messages"] = @$_SESSION["messages"];
+        }
+        
+        echo $this->render->view('manager/editsubscription', $data);
     }
 
     /**

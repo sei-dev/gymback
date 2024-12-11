@@ -51,6 +51,15 @@ class Subscriptions extends ModelAbstract implements ModelInterface
 		return $this->fetchAll($sQuery);
 	}
 	
+	public function update(string $price, string $id) {
+	    
+	    $sQuery = "UPDATE invoice_items
+				SET price = '{$price}'
+                WHERE id = '{$id}'
+				";
+	    return $this->fetchAll($sQuery);
+	}
+	
 	/* public function addCity(string $name) {
 	    
 	    $sQuery = "INSERT INTO cities (city)
