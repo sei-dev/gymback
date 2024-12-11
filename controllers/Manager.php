@@ -200,7 +200,7 @@ class Manager extends Controller
         
         $data["subscription"] = $model->getById($id);
         
-        if ($data["gym"] == false) {
+        if ($data["subscription"] == false) {
             $this->redirect("/manager/index");
             // throw new Exception("No such user");
         }
