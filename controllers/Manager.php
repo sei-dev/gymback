@@ -6,6 +6,7 @@ use MODELS\Trainings;
 use MODELS\Measurements;
 use MODELS\Cities;
 use MODELS\Subscriptions;
+use MODELS\Invoices;
 
 class Manager extends Controller
 {
@@ -185,7 +186,7 @@ class Manager extends Controller
         
         $data["items"] = $model->getAll();
         $count = sizeof($data["items"]);
-        $data["pagination"] = $this->getPagination("/manager/gyms", $count, 10);
+        $data["pagination"] = $this->getPagination("/manager/subscriptions", $count, 10);
         $data["count"] = sizeof($data["items"]);
         
         echo $this->render->view('manager/subscriptions', $data);
@@ -208,6 +209,19 @@ class Manager extends Controller
         //die(var_dump($data["subscription"]));
         
         echo $this->render->view('manager/editsubscription', $data);
+    }
+    
+    public function invoices()
+    {
+        
+        $model = new Invoices();
+        
+        $data["items"] = $model->getAll();
+        $count = sizeof($data["items"]);
+        $data["pagination"] = $this->getPagination("/manager/invoices", $count, 10);
+        $data["count"] = sizeof($data["items"]);
+        
+        echo $this->render->view('manager/invoices', $data);
     }
 
     public function searchUser()
