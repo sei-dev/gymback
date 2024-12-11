@@ -5,16 +5,16 @@
     
         <div class="row">
         	<div class="col-md-4"><?=$this->translate("Monthly subscription")?></div>
-            <div class="col-md-9"><?=$this->items[0]["price"]?></div>
-            <div class="col-md-1 tools">
+            <div class="col-md-5"><?=$this->items[0]["price"]?></div>
+            <div class="col-md-3 tools">
                 <a href="/manager/editsub?id=<?=$this->items[0]["id"]?>"><i class="fa fa-edit"></i></a>
             </div>
         </div>
         	
         <div class="row">
         	<div class="col-md-4"><?=$this->translate("Yearly subscription")?></div>
-            <div class="col-md-9"><?=$this->items[1]["price"]?></div>
-            <div class="col-md-1 tools">
+            <div class="col-md-5"><?=$this->items[1]["price"]?></div>
+            <div class="col-md-3 tools">
                 <a href="/manager/editsub?id=<?=$this->items[1]["id"]?>"><i class="fa fa-edit"></i></a>
             </div>
         </div>
