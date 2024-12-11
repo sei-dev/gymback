@@ -7,7 +7,7 @@
         	<div class="col-md-4"><?=$this->translate("Monthly subscription")?></div>
             <div class="col-md-9"><?=$this->items[0]["price"]?></div>
             <div class="col-md-1 tools">
-                <a href="/manager/editsub?id=<?=$one["id"]?>"><i class="fa fa-edit"></i></a>
+                <a href="/manager/editsub?id=<?=$this->items[0]["id"]?>"><i class="fa fa-edit"></i></a>
             </div>
         </div>
         	
@@ -15,7 +15,7 @@
         	<div class="col-md-4"><?=$this->translate("Yearly subscription")?></div>
             <div class="col-md-9"><?=$this->items[1]["price"]?></div>
             <div class="col-md-1 tools">
-                <a href="/manager/editsub?id=<?=$one["id"]?>"><i class="fa fa-edit"></i></a>
+                <a href="/manager/editsub?id=<?=$this->items[1]["id"]?>"><i class="fa fa-edit"></i></a>
             </div>
         </div>
         
