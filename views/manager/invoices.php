@@ -8,9 +8,9 @@
                 <div class="col-md-3">
                     <?php
                     if ($one['item_id'] == 1) {
-                        echo $this->translate("Monthly Subscription");
+                        echo $this->translate("Monthly subscription");
                     } elseif ($one['item_id'] == 2) {
-                        echo $this->translate("Yearly Subscription");
+                        echo $this->translate("Yearly subscription");
                     } else {
                         echo $this->translate("Unknown");
                     }
