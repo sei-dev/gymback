@@ -205,7 +205,7 @@ class Manager extends Controller
             // throw new Exception("No such user");
         }
         
-        
+        die(var_dump($data["subscription"]));
         
         echo $this->render->view('manager/editsubscription', $data);
     }
