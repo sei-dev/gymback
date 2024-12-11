@@ -28,7 +28,7 @@ class Subscriptions extends ModelAbstract implements ModelInterface
 	public function getById(string $id) {
 		//$id = $this->getDbAdapter()->
 		$sQuery = "SELECT *
-				FROM ".self::getTablePrefix()."cities
+				FROM ".self::getTablePrefix()."invoice_items
 				WHERE id = '{$id}'
 				LIMIT 1";
 		return $this->getDbAdapter()->query($sQuery)->fetch();
