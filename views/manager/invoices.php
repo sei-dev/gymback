@@ -9,7 +9,7 @@
                     <?php
                     if ($one['item_id'] == 1) {
                         echo $this->translate("Monthly");
-                    } elseif ($one['item_id'] == 0) {
+                    } elseif ($one['item_id'] == 2) {
                         echo $this->translate("Yearly");
                     } else {
                         echo $this->translate("Unknown");
