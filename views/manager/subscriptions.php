@@ -1,4 +1,4 @@
-<h3 class="heading-style"><?=$this->translate("Cities");?></h3>
+<h3 class="heading-style"><?=$this->translate("Subscriptions");?></h3>
 
 <div class="box box-primary">
     <div class="box-body bgr-every-second">
