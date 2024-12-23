@@ -27,8 +27,9 @@ class Users extends ModelAbstract implements ModelInterface
 	 */
 	public function getById(string $id) {
 		//$id = $this->getDbAdapter()->
-		$sQuery = "SELECT *
+		$sQuery = "SELECT users.*, cities.city as location
 				FROM ".self::getTablePrefix()."users
+                LEFT JOIN cities ON users.city_id = cities.id
 				WHERE id = '{$id}'
 				LIMIT 1";
 		return $this->getDbAdapter()->query($sQuery)->fetch();
