@@ -30,7 +30,7 @@ class Users extends ModelAbstract implements ModelInterface
 		$sQuery = "SELECT users.*, cities.city as location
 				FROM ".self::getTablePrefix()."users
                 LEFT JOIN cities ON users.city_id = cities.id
-				WHERE id = '{$id}'
+				WHERE users.id = '{$id}'
 				LIMIT 1";
 		return $this->getDbAdapter()->query($sQuery)->fetch();
 	}
