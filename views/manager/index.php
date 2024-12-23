@@ -33,7 +33,7 @@
                	<a href="/manager/edituser?id=<?=$one["id"]?>"><i class="fa fa-industry"></i></a>
                	<a href="/manager/edituser?id=<?=$one["id"]?>"><i class="fa fa-file-archive-o"></i></a>
                 <a href="/manager/edituser?id=<?=$one["id"]?>"><i class="fa fa-address-book-o"></i></a>
-                <i class="fa fa-trash-o"></i>
+                <i class="fa fa-trash"></i>
             </div>
         </div>
         <?php endforeach;?>
