@@ -30,6 +30,9 @@
             <div class="col-md-1 label label-danger"><i class="fa fa-clock-o"></i> <?=$this->humanReadable($one["created_on"])?></div>
             <div class="col-md-1 tools">
                 <a href="/manager/edituser?id=<?=$one["id"]?>"><i class="fa fa-edit"></i></a>
+               	<a href="/manager/edituser?id=<?=$one["id"]?>"><i class="fa fa-industry"></i></a>
+               	<a href="/manager/edituser?id=<?=$one["id"]?>"><i class="fa fa-file-archive-o"></i></a>
+                <a href="/manager/edituser?id=<?=$one["id"]?>"><i class="fa fa-address-book-o"></i></a>
                 <i class="fa fa-trash-o"></i>
             </div>
         </div>
