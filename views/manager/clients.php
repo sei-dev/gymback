@@ -25,7 +25,8 @@
         <div class="col-md-2"><?=$this->translate("Phone")?></div>
         <div class="col-md-1"><?=$this->translate("Location")?></div>
         <div class="col-md-1"><?=$this->translate("Subscribed")?></div>
-        <div class="col-md-2"><?=$this->translate("Created At")?></div>
+        <div class="col-md-1"><?=$this->translate("Created At")?></div>
+        <div class="col-md-1"><?=$this->translate("Status")?></div>
         <div class="col-md-1"><?=$this->translate("Actions")?></div>
     </div>
         
