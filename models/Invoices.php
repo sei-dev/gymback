@@ -52,6 +52,19 @@ class Invoices extends ModelAbstract implements ModelInterface
 		return $this->fetchAll($sQuery);
 	}
 	
+	public function getUserInvoices(string $id, int $page = 1, int $perPage = 10) {
+	    
+	    $start = ($page-1) * $perPage;
+	    
+	    $sQuery = "SELECT invoices.*, users.first_name, users.last_name
+				FROM invoices
+                LEFT JOIN users ON invoices.trainer_id = users.id
+				WHERE invoices.trainer_id = '{$id}'
+                LIMIT {$start}, {$perPage}
+				";
+	    return $this->fetchAll($sQuery);
+	}
+	
 	public function updateSubscription(string $price, string $id) {
 	    
 	    $sQuery = "UPDATE invoices
