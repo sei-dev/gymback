@@ -25,7 +25,7 @@
         <div class="col-md-1"><?=$this->translate("Phone")?></div>
         <div class="col-md-1"><?=$this->translate("Location")?></div>
         <div class="col-md-1"><?=$this->translate("Deadline")?></div>
-        <div class="col-md-1"><?=$this->translate("Role")?></div>
+        <div class="col-md-1"><?=$this->translate("Subscription")?></div>
         <div class="col-md-1"><?=$this->translate("Created At")?></div>
         <div class="col-md-2"><?=$this->translate("Actions")?></div>
     </div>
@@ -45,7 +45,7 @@
                	<a href="/manager/usergyms?id=<?=$one["id"]?>"><i class="fa fa-industry" title="Gyms"></i></a>
                	<a href="/manager/usermeasurements?id=<?=$one["id"]?>"><i class="fa fa-file-archive-o" title="Measurements"></i></a>
                 <a href="/manager/userinvoices?id=<?=$one["id"]?>"><i class="fa fa-address-book-o" title="Invoices"></i></a>
-                <i class="fa fa-ban"></i>
+                <a href="/manager/disable?id=<?=$one["id"]?>"><i class="fa fa-ban"></i></a>
             </div>
         </div>
         <?php endforeach;?>
