@@ -192,7 +192,7 @@ class Manager extends Controller
         
         $users = $user_model->getAllUsers();
         
-        $data["items"] = $model->getUserMeasurements($_GET["page"] ?? 1);
+        $data["items"] = $model->getUserMeasurements($id, $_GET["page"] ?? 1);
         
         $i = 0;
         $e = 0;
