@@ -43,7 +43,7 @@
             <div class="col-md-1 tools">
                 <a href="/manager/edituser?id=<?=$one["id"]?>"><i class="fa fa-edit" title="Edit"></i></a>
                	<a href="/manager/usermeasurements?id=<?=$one["id"]?>"><i class="fa fa-file-archive-o" title="Measurements"></i></a>
-                <i class="fa fa-ban"></i>
+                <a href="/manager/disableclient?id=<?=$one["id"]?>"><i class="fa fa-ban"></i></a>
             </div>
         </div>
         <?php endforeach;?>

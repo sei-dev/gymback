@@ -73,6 +73,19 @@ class Users extends ModelAbstract implements ModelInterface
 	    return $this->fetchAll($sQuery);
 	}
 	
+	public function disableUser(string $id) {
+	        
+	        $sQuery = "UPDATE users
+				SET enabled = CASE
+                WHEN enabled = 0 THEN 1
+                WHEN enabled = 1 THEN 0
+                ELSE enabled
+                END
+                WHERE id = '{$id}'
+				";
+	        return $this->fetchAll($sQuery);
+	}
+	
 	public function searchTrainer(string $param, int $page = 1, int $perPage = 10) {
 	    
 	    $start = ($page-1) * $perPage;

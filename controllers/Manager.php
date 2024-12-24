@@ -383,6 +383,36 @@ class Manager extends Controller
         
         echo $this->render->view('manager/clients', $data);
     }
+    
+    public function disableclient()
+    {
+        $id = $_POST["id"];
+        
+        $model = new Users();
+        
+        $model->disableUser($id, $_GET["page"] ?? 1);
+        $count = $model->count();
+        $data["pagination"] = $this->getPagination("/manager/clients", $count, 10);
+        $data["count"] = $count;
+        
+
+        $this->redirect("/manager/clients");
+    }
+    
+    public function disabletrainer()
+    {
+        $id = $_POST["id"];
+        
+        $model = new Users();
+        
+        $model->disableUser($id, $_GET["page"] ?? 1);
+        $count = $model->count();
+        $data["pagination"] = $this->getPagination("/manager/clients", $count, 10);
+        $data["count"] = $count;
+        
+        
+        $this->redirect("/manager/index");
+    }
 
     public function addcity()
     {
