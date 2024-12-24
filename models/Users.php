@@ -51,6 +51,17 @@ class Users extends ModelAbstract implements ModelInterface
 		return $this->fetchAll($sQuery);
 	}
 	
+	public function getAllClients(int $page = 1, int $perPage = 10) {
+	    
+	    $start = ($page-1) * $perPage;
+	    
+	    $sQuery = "SELECT users.*, cities.city as location FROM users LEFT JOIN cities ON users.city_id = cities.id
+				   WHERE is_trainer = 0
+                   LIMIT {$start}, {$perPage}
+				";
+	    return $this->fetchAll($sQuery);
+	}
+	
 	public function upadateUser(string $id, string $first_name, string $last_name, string $email,
 	                           string $phone, string $location, string $deadline) {
 	   

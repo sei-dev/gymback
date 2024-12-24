@@ -59,7 +59,7 @@ class Manager extends Controller
     {
         $model = new Users();
         
-        $data["users"] = $model->getAllUsers($_GET["page"] ?? 1);
+        $data["users"] = $model->getAllClients($_GET["page"] ?? 1);
         $count = $model->count();
         $data["pagination"] = $this->getPagination("/manager/index", $count, 10);
         $data["count"] = $count;
@@ -75,7 +75,7 @@ class Manager extends Controller
         // die(var_dump($data["users"]));
         
         // Render and pass data to the view
-        echo $this->render->view('manager/index', $data);
+        echo $this->render->view('manager/clients', $data);
     }
 
     /**
