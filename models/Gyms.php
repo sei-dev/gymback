@@ -51,6 +51,19 @@ class Gyms extends ModelAbstract implements ModelInterface
 		return $this->fetchAll($sQuery);
 	}
 	
+	public function getUserGyms(string $id, int $page = 1, int $perPage = 10) {
+	    
+	    $start = ($page-1) * $perPage;
+	    
+	    $sQuery = "SELECT gyms.*, cities.city FROM gyms 
+                    LEFT JOIN cities ON cities.id = gyms.city_id 
+                    LEFT JOIN trainer_gyms ON trainer_gyms.gym_id = gyms.id
+                    WHERE trainer_gyms.user_id = '{$id}'
+                    LIMIT {$start}, {$perPage}
+				";
+	    return $this->fetchAll($sQuery);
+	}
+	
 	public function upadateGym(string $id, string $name, string $address, string $city) {
 	    
 	    $sQuery = "UPDATE gyms

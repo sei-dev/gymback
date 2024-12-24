@@ -124,6 +124,57 @@ class Manager extends Controller
         // Render and pass data to the view
         echo $this->render->view('manager/gyms', $data);
     }
+    
+    public function usergyms()
+    {
+        $id = intval($_GET["id"]);
+        
+        $model = new Gyms();
+        
+        $data["items"] = $model->getUserGyms($id, $_GET["page"] ?? 1);
+        $count = $model->count();
+        $data["pagination"] = $this->getPagination("/manager/gyms", $count, 10);
+        $data["count"] = $count;
+        
+        // die(var_dump($data["users"]));
+        
+        // Render and pass data to the view
+        echo $this->render->view('manager/gyms', $data);
+    }
+    
+    public function userinvoices()
+    {
+        $id = intval($_GET["id"]);
+        
+        $model = new Gyms();
+        
+        $data["items"] = $model->getAll($_GET["page"] ?? 1);
+        $count = $model->count();
+        $data["pagination"] = $this->getPagination("/manager/gyms", $count, 10);
+        $data["count"] = $count;
+        
+        // die(var_dump($data["users"]));
+        
+        // Render and pass data to the view
+        echo $this->render->view('manager/gyms', $data);
+    }
+    
+    public function usermeasurements()
+    {
+        $id = intval($_GET["id"]);
+        
+        $model = new Gyms();
+        
+        $data["items"] = $model->getAll($_GET["page"] ?? 1);
+        $count = $model->count();
+        $data["pagination"] = $this->getPagination("/manager/gyms", $count, 10);
+        $data["count"] = $count;
+        
+        // die(var_dump($data["users"]));
+        
+        // Render and pass data to the view
+        echo $this->render->view('manager/gyms', $data);
+    }
 
     public function cities()
     {
