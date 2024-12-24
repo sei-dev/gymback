@@ -45,7 +45,7 @@
                	<a href="/manager/usergyms?id=<?=$one["id"]?>"><i class="fa fa-industry" title="Gyms"></i></a>
                	<a href="/manager/usermeasurements?id=<?=$one["id"]?>"><i class="fa fa-file-archive-o" title="Measurements"></i></a>
                 <a href="/manager/userinvoices?id=<?=$one["id"]?>"><i class="fa fa-address-book-o" title="Invoices"></i></a>
-                <i class="fa fa-trash-o"></i>
+                <i class="fa fa-ban"></i>
             </div>
         </div>
         <?php endforeach;?>
