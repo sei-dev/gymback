@@ -67,7 +67,7 @@ class Users extends ModelAbstract implements ModelInterface
 	    $start = ($page-1) * $perPage;
 	    
 	    $sQuery = "SELECT users.*, cities.city as location
-				FROM users LEFT JOIN cities ON users.city_id = cities.id WHERE is_trainer = 1 AND (first_name LIKE '%{$param}%' OR last_name LIKE '%{$param}%') LIMIT {$start}, {$perPage};
+				FROM users LEFT JOIN cities ON users.city_id = cities.id WHERE is_trainer = 1 AND first_name LIKE '%{$param}%' OR last_name LIKE '%{$param}%' LIMIT {$start}, {$perPage};
 				";
 	    return $this->fetchAll($sQuery);
 	}
