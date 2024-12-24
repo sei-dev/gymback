@@ -60,6 +60,9 @@ class Measurements extends ModelAbstract implements ModelInterface
 				WHERE trainer_id = '{$id}'
                 LIMIT {$start}, {$perPage}
 				";
+	    
+	    var_dump($sQuery);
+	    die();
 	    return $this->fetchAll($sQuery);
 	}
 	
