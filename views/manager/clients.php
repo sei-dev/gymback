@@ -42,9 +42,7 @@
             <div class="col-md-1 label label-danger"><i class="fa fa-clock-o"></i> <?=$this->humanReadable($one["created_on"])?></div>
             <div class="col-md-2 tools">
                 <a href="/manager/edituser?id=<?=$one["id"]?>"><i class="fa fa-edit" title="Edit"></i></a>
-               	<a href="/manager/usergyms?id=<?=$one["id"]?>"><i class="fa fa-industry" title="Gyms"></i></a>
                	<a href="/manager/usermeasurements?id=<?=$one["id"]?>"><i class="fa fa-file-archive-o" title="Measurements"></i></a>
-                <a href="/manager/userinvoices?id=<?=$one["id"]?>"><i class="fa fa-address-book-o" title="Invoices"></i></a>
                 <i class="fa fa-trash-o"></i>
             </div>
         </div>
