@@ -37,7 +37,8 @@
             <div class="col-md-2 text "><?=$one["phone"]?></div>
             <div class="col-md-1 text "><?=$one["location"]?></div>
             <div class="col-md-1 label label-success"><?php if($one["sub_paid"]=="0") echo $this->translate("Not paid"); else echo $this->translate("Paid");?></div>
-            <div class="col-md-2 label label-danger"><i class="fa fa-clock-o"></i> <?=$this->humanReadable($one["created_on"])?></div>
+            <div class="col-md-1 label label-danger"><i class="fa fa-clock-o"></i> <?=$this->humanReadable($one["created_on"])?></div>
+            <div class="col-md-1 label label-success"><?php if($one["enabled"]=="0") echo $this->translate("Disabled"); else echo $this->translate("Enabled");?></div>
             <div class="col-md-1 tools">
                 <a href="/manager/edituser?id=<?=$one["id"]?>"><i class="fa fa-edit" title="Edit"></i></a>
                	<a href="/manager/usermeasurements?id=<?=$one["id"]?>"><i class="fa fa-file-archive-o" title="Measurements"></i></a>
