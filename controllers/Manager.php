@@ -386,7 +386,7 @@ class Manager extends Controller
     
     public function disableclient()
     {
-        $id = $_POST["id"];
+        $id = intval($_GET["id"]);
         
         $model = new Users();
         
@@ -401,7 +401,7 @@ class Manager extends Controller
     
     public function disabletrainer()
     {
-        $id = $_POST["id"];
+        $id = intval($_GET["id"]);
         
         $model = new Users();
         
