@@ -51,6 +51,18 @@ class Measurements extends ModelAbstract implements ModelInterface
 		return $this->fetchAll($sQuery);
 	}
 	
+	public function getUserMeasurements(string $id, int $page = 1, int $perPage = 10) {
+	    
+	    $start = ($page-1) * $perPage;
+	    
+	    $sQuery = "SELECT *
+				FROM ".self::getTablePrefix().$this->table."
+				WHERE trainer_id = {'$id'}
+                LIMIT {$start}, {$perPage}
+				";
+	    return $this->fetchAll($sQuery);
+	}
+	
 	/**
 	 *
 	 * @param string $email

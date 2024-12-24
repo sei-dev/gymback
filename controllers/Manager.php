@@ -186,17 +186,17 @@ class Manager extends Controller
     {
         $id = intval($_GET["id"]);
         
-        $model = new Gyms();
+        $model = new Measurements();
         
         $data["items"] = $model->getAll($_GET["page"] ?? 1);
         $count = $model->count();
-        $data["pagination"] = $this->getPagination("/manager/gyms", $count, 10);
+        $data["pagination"] = $this->getPagination("/manager/measurements", $count, 10);
         $data["count"] = $count;
         
         // die(var_dump($data["users"]));
         
         // Render and pass data to the view
-        echo $this->render->view('manager/gyms', $data);
+        echo $this->render->view('manager/measurements', $data);
     }
 
     public function cities()
