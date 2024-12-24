@@ -361,7 +361,7 @@ class Manager extends Controller
         $model = new Users();
         
         
-        $data["users"] = $model->searchTrainer($param, $_GET["page"] ?? 1);
+        $data["users"] = $model->searchClient($param, $_GET["page"] ?? 1);
         $count = $model->count();
         $data["pagination"] = $this->getPagination("/manager/clients", $count, 10);
         $data["count"] = $count;
