@@ -353,6 +353,36 @@ class Manager extends Controller
 
         echo $this->render->view('manager/index', $data);
     }
+    
+    public function searchclient()
+    {
+        $param = $_POST["param"];
+        
+        $model = new Users();
+        
+        
+        $data["users"] = $model->searchTrainer($param, $_GET["page"] ?? 1);
+        $count = $model->count();
+        $data["pagination"] = $this->getPagination("/manager/clients", $count, 10);
+        $data["count"] = $count;
+        
+        /* array_walk($data["users"], function (&$a) {
+         if ($this->isFileExists(self::DIR_USERS, $a["id"])) {
+         $a['image'] = $this->domain . "/images/users/" . $a["id"] . ".png?r=" . rand(0, 100000);
+         } else {
+         $a['image'] = $this->domain . "/images/users/logo.png";
+         }
+         }); */
+        
+        /*
+         * $data["items"] = $model->searchGym($param, $_GET["page"] ?? 1);
+         * $count = sizeof($data["items"]);
+         * $data["pagination"] = $this->getPagination("/manager/gyms", $count, 10);
+         * $data["count"] = sizeof($data["items"]);
+         */
+        
+        echo $this->render->view('manager/clients', $data);
+    }
 
     public function addcity()
     {
