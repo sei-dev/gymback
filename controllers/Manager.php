@@ -169,9 +169,9 @@ class Manager extends Controller
     {
         $id = intval($_GET["id"]);
         
-        $model = new Gyms();
+        $model = new Invoices();
         
-        $data["items"] = $model->getUserGyms($id, $_GET["page"] ?? 1);
+        $data["items"] = $model->getUserInvoices($id, $_GET["page"] ?? 1);
         $count = $model->count();
         $data["pagination"] = $this->getPagination("/manager/gyms", $count, 10);
         $data["count"] = $count;
