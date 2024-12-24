@@ -324,14 +324,14 @@ class Manager extends Controller
         echo $this->render->view('manager/invoices', $data);
     }
 
-    public function searchUser()
+    public function searchtrainer()
     {
         $param = $_POST["param"];
 
         $model = new Users();
         
 
-        $data["users"] = $model->searchUser($param, $_GET["page"] ?? 1);
+        $data["users"] = $model->searchTrainer($param, $_GET["page"] ?? 1);
         $count = $model->count();
         $data["pagination"] = $this->getPagination("/manager/index", $count, 10);
         $data["count"] = $count;
