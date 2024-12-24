@@ -1,7 +1,8 @@
 <ul class="sidebar-menu" data-widget="tree">
     <li class="header">MAIN NAVIGATION</li>
     <li class=" ">
-    	<a class="menuLinkProper" href="/manager/index" title="Users"><i class="fa fa-arrow-right"></i><span>Users</span></a>
+    	<a class="menuLinkProper" href="/manager/index" title="Trainers"><i class="fa fa-arrow-right"></i><span>Trainers</span></a>
+    	<a class="menuLinkProper" href="/manager/clients" title="Clients"><i class="fa fa-arrow-right"></i><span>Clients</span></a>
     	<a class="menuLinkProper" href="/manager/gyms" title="Gyms"><i class="fa fa-arrow-right"></i><span>Gyms</span></a>
     	<!--<a class="menuLinkProper" href="/manager/trainers" title="Trainers"><i class="fa fa-arrow-right"></i><span>Trainers</span></a>-->
  		<a class="menuLinkProper" href="/manager/trainings" title="Trainings"><i class="fa fa-arrow-right"></i><span>Trainings</span></a>

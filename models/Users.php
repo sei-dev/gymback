@@ -40,12 +40,12 @@ class Users extends ModelAbstract implements ModelInterface
 	 * @param string $email
 	 * @return array
 	 */
-	public function getAllUsers(int $page = 1, int $perPage = 10) {
+	public function getAllTrainers(int $page = 1, int $perPage = 10) {
 	    
 	    $start = ($page-1) * $perPage;
 		
 		$sQuery = "SELECT users.*, cities.city as location FROM users LEFT JOIN cities ON users.city_id = cities.id
-				   WHERE 1
+				   WHERE is_trainer = 1
                    LIMIT {$start}, {$perPage}
 				";
 		return $this->fetchAll($sQuery);

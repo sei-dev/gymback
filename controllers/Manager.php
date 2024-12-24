@@ -36,7 +36,7 @@ class Manager extends Controller
     {
         $model = new Users();
 
-        $data["users"] = $model->getAllUsers($_GET["page"] ?? 1);
+        $data["users"] = $model->getAllTrainers($_GET["page"] ?? 1);
         $count = $model->count();
         $data["pagination"] = $this->getPagination("/manager/index", $count, 10);
         $data["count"] = $count;
