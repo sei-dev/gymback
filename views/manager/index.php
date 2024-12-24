@@ -27,7 +27,8 @@
         <div class="col-md-1"><?=$this->translate("Deadline")?></div>
         <div class="col-md-1"><?=$this->translate("Subscription")?></div>
         <div class="col-md-1"><?=$this->translate("Created At")?></div>
-        <div class="col-md-2"><?=$this->translate("Actions")?></div>
+        <div class="col-md-1"><?=$this->translate("Status")?></div>
+        <div class="col-md-1"><?=$this->translate("Actions")?></div>
     </div>
         
         <?php foreach ($this->users as $one):?>
@@ -40,7 +41,8 @@
             <div class="col-md-1 text "><?=$one["deadline"] . "h"?></div>
             <div class="col-md-1 label label-success"><?php if($one["sub_paid"]=="0") echo $this->translate("Not paid"); else echo $this->translate("Paid");?></div>
             <div class="col-md-1 label label-danger"><i class="fa fa-clock-o"></i> <?=$this->humanReadable($one["created_on"])?></div>
-            <div class="col-md-2 tools">
+            <div class="col-md-1 label label-success"><?php if($one["enabled"]=="0") echo $this->translate("Disabled"); else echo $this->translate("Enabled");?></div>
+            <div class="col-md-1 tools">
                 <a href="/manager/edituser?id=<?=$one["id"]?>"><i class="fa fa-edit" title="Edit"></i></a>
                	<a href="/manager/usergyms?id=<?=$one["id"]?>"><i class="fa fa-industry" title="Gyms"></i></a>
                	<a href="/manager/usermeasurements?id=<?=$one["id"]?>"><i class="fa fa-file-archive-o" title="Measurements"></i></a>
