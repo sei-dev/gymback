@@ -17,6 +17,18 @@
 
 <div class="box box-primary">
     <div class="box-body bgr-every-second">
+    
+    <div class="row" style="background-color: #d3d3d3; font-weight: bold;">
+        <div class="col-md-1"><?=$this->translate("Profile Image")?></div>
+        <div class="col-md-2"><?=$this->translate("Name")?></div>
+        <div class="col-md-2"><?=$this->translate("Email")?></div>
+        <div class="col-md-1"><?=$this->translate("Phone")?></div>
+        <div class="col-md-1"><?=$this->translate("Location")?></div>
+        <div class="col-md-1"><?=$this->translate("Deadline")?></div>
+        <div class="col-md-1"><?=$this->translate("Role")?></div>
+        <div class="col-md-1"><?=$this->translate("Created At")?></div>
+        <div class="col-md-2"><?=$this->translate("Actions")?></div>
+    </div>
         
         <?php foreach ($this->users as $one):?>
         <div class="row">
