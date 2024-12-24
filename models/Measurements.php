@@ -61,8 +61,6 @@ class Measurements extends ModelAbstract implements ModelInterface
                 LIMIT {$start}, {$perPage}
 				";
 	    
-	    var_dump($sQuery);
-	    die();
 	    return $this->fetchAll($sQuery);
 	}
 	
