@@ -43,7 +43,15 @@
 				<div class="col-md-12">
 					<div class="form-group">
                 		<label class="text-primary"><?=$this->translate("Location");?></label>
-                		<input placeholder="<?=$this->translate("Location");?>" class="form-control" type="text" id="location" name="location" value="<?=$this->user["location"];?>"/>
+                		<select placeholder="<?=$this->translate("City");?>" class="form-control" type="text" name="city">
+                		<?php foreach ($this->cities as $one):?>
+                			<?php if($one['id']==$this->user['city_id']){ ?>
+								<option value="<?=$one["id"]?>" selected><?=$one["city"]?></option>
+							<?php }else{ ?>
+                				<option value="<?=$one["id"]?>"><?=$one["city"]?></option>
+                			<?php } ?>
+                		<?php endforeach;?>
+                		</select>
                 	</div>
                 </div>
 			</div>
