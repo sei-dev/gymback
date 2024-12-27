@@ -434,7 +434,11 @@ class Manager extends Controller
 
     public function addcity()
     {
-        echo $this->render->view('manager/addcity');
+        $country_model = new Countries();
+        
+        $data['countries'] = $country_model->getAll();
+        
+        echo $this->render->view('manager/addcity', $data);
     }
     
     public function addcountry()
