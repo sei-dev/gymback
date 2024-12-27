@@ -8,6 +8,7 @@
  		<a class="menuLinkProper" href="/manager/trainings" title="Trainings"><i class="fa fa-arrow-right"></i><span>Trainings</span></a>
  		<a class="menuLinkProper" href="/manager/measurements" title="Measurements"><i class="fa fa-arrow-right"></i><span>Measurements</span></a>
  		<a class="menuLinkProper" href="/manager/cities" title="Cities"><i class="fa fa-arrow-right"></i><span>Cities</span></a>
+ 		<a class="menuLinkProper" href="/manager/countries" title="Countries"><i class="fa fa-arrow-right"></i><span>Countries</span></a>
 		<a class="menuLinkProper" href="/manager/invoices" title="Invoices"><i class="fa fa-arrow-right"></i><span>Invoices</span></a>
  		<a class="menuLinkProper" href="/manager/subscriptions" title="Subscriptions"><i class="fa fa-arrow-right"></i><span>Subscriptions</span></a>
  		<!--<a class="menuLinkProper" href="/manager/tof" title="TermsOfService"><i class="fa fa-arrow-right"></i><span>Terms Of Service</span></a> --> 

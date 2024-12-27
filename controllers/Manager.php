@@ -7,6 +7,7 @@ use MODELS\Measurements;
 use MODELS\Cities;
 use MODELS\Subscriptions;
 use MODELS\Invoices;
+use MODELS\Countries;
 
 class Manager extends Controller
 {
@@ -241,6 +242,21 @@ class Manager extends Controller
         // Render and pass data to the view
         echo $this->render->view('manager/cities', $data);
     }
+    
+    public function countries()
+    {
+        $model = new Countries();
+        
+        $data["items"] = $model->getAll($_GET["page"] ?? 1);
+        $count = $model->count();
+        $data["pagination"] = $this->getPagination("/manager/cities", $count, 10);
+        $data["count"] = $count;
+        
+        // die(var_dump($data["users"]));
+        
+        // Render and pass data to the view
+        echo $this->render->view('manager/countries', $data);
+    }
 
     /**
      *
@@ -439,6 +455,24 @@ class Manager extends Controller
         echo $this->render->view('manager/addcity', $data);
     }
 
+    public function insertcountry()
+    {
+        $model = new Countries();
+        
+        if ($this->isPost()) {
+            
+            $name = $_POST["country"];
+            
+            $model->addCity($name);
+            
+            $this->redirect("/manager/countries");
+        } else if ($this->isGet()) {
+            $data["messages"] = @$_SESSION["messages"];
+        }
+        
+        echo $this->render->view('manager/addcountry', $data);
+    }
+    
     public function addGym()
     {
         $model = new Cities();
