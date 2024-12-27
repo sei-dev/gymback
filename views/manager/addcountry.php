@@ -6,8 +6,8 @@
 			<div class="row">
 				<div class="col-md-12">
 					<div class="form-group">
-                		<label class="text-primary"><?=$this->translate("City");?></label>
-                		<input placeholder="<?=$this->translate("City");?>" class="form-control" type="text" name="country" value=""/>
+                		<label class="text-primary"><?=$this->translate("Country");?></label>
+                		<input placeholder="<?=$this->translate("Country");?>" class="form-control" type="text" name="country" value=""/>
                 	</div>
                 </div>
                 
