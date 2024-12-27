@@ -1,5 +1,5 @@
 <form class="req-forms" id="search_form" method="post" action="insertcountry" enctype="multipart/form-data">
-	<h3 class="heading-style"><?=$this->translate("Add city");?></h3>
+	<h3 class="heading-style"><?=$this->translate("Add country");?></h3>
 	<div class="box box-primary">
 		<div class="box-body">
 		
