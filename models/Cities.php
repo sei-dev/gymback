@@ -51,10 +51,10 @@ class Cities extends ModelAbstract implements ModelInterface
 		return $this->fetchAll($sQuery);
 	}
 	
-	public function addCity(string $name) {
+	public function addCity(string $name, string $country_id) {
 	    
-	    $sQuery = "INSERT INTO cities (city)
-                   VALUES ('{$name}');
+	    $sQuery = "INSERT INTO cities (city, country_id)
+                   VALUES ('{$name}', '{$country_id}');
 				";
 	    return $this->fetchAll($sQuery);
 	}

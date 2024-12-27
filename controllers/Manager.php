@@ -453,8 +453,9 @@ class Manager extends Controller
         if ($this->isPost()) {
 
             $name = $_POST["city"];
+            $country_id = $_POST["country"];
 
-            $model->addCity($name);
+            $model->addCity($name, $country_id);
 
             $this->redirect("/manager/cities");
         } else if ($this->isGet()) {
