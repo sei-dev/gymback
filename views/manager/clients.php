@@ -24,7 +24,7 @@
         <div class="col-md-2"><?=$this->translate("Email")?></div>
         <div class="col-md-2"><?=$this->translate("Phone")?></div>
         <div class="col-md-1"><?=$this->translate("Location")?></div>
-        <div class="col-md-1"><?=$this->translate("Subscribed")?></div>
+        <div class="col-md-1"><?=$this->translate("Nationality")?></div>
         <div class="col-md-1"><?=$this->translate("Created At")?></div>
         <div class="col-md-1"><?=$this->translate("Status")?></div>
         <div class="col-md-1"><?=$this->translate("Actions")?></div>
@@ -37,7 +37,7 @@
             <div class="col-md-2"><?=$one["email"]?></div>
             <div class="col-md-2 text "><?=$one["phone"]?></div>
             <div class="col-md-1 text "><?=$one["location"]?></div>
-            <div class="col-md-1 label label-success"><?php if($one["sub_paid"]=="0") echo $this->translate("Not paid"); else echo $this->translate("Paid");?></div>
+            <div class="col-md-1"><?=$one["nationality"]?></div>
             <div class="col-md-1 label label-danger"><i class="fa fa-clock-o"></i> <?=$this->humanReadable($one["created_on"])?></div>
             <div class="col-md-1 label label-success"><?php if($one["enabled"]=="0") echo $this->translate("Disabled"); else echo $this->translate("Enabled");?></div>
             <div class="col-md-1 tools">
