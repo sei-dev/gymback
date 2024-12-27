@@ -18,6 +18,15 @@
 <div class="box box-primary">
     <div class="box-body bgr-every-second">
     
+    <div class="row" style="background-color: #d3d3d3; font-weight: bold;">
+            <div class="col-md-3"><?=$this->translate("Gym Name")?></div>
+            <div class="col-md-2"><?=$this->translate("Address")?></div>
+            <div class="col-md-2"><?=$this->translate("City")?></div>
+            <div class="col-md-2"><?=$this->translate("Phone")?></div>
+            <div class="col-md-2"><?=$this->translate("Created At")?></div>
+            <div class="col-md-1"><?=$this->translate("Actions")?></div>
+        </div>
+    
         <?php foreach ($this->items as $one):?>
         
             <!-- <span class="">
