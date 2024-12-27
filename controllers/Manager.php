@@ -87,8 +87,10 @@ class Manager extends Controller
         $id = intval($_GET["id"]);
 
         $model = new Users();
+        $city_model = new Cities();
 
         $data["user"] = $model->getById($id);
+        $data['cities'] = $city_model->getAll();
 
         if ($data["user"] == false) {
             $this->redirect("/manager/index");
