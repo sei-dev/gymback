@@ -43,8 +43,8 @@ class Cities extends ModelAbstract implements ModelInterface
 	    
 	    $start = ($page-1) * $perPage;
 		
-		$sQuery = "SELECT *
-				FROM cities
+		$sQuery = "SELECT cities.*, countries.country
+				FROM cities LEFT JOIN countries ON countries.id = cities.country_id
 				WHERE 1
                 LIMIT {$start}, {$perPage}
 				";
