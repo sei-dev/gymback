@@ -57,7 +57,7 @@ class Measurements extends ModelAbstract implements ModelInterface
 	    
 	    $sQuery = "SELECT *
 				FROM ".self::getTablePrefix().$this->table."
-				WHERE trainer_id = '{$id}'
+				WHERE trainer_id = '{$id}' OR client_id = '{$id}'
                 LIMIT {$start}, {$perPage}
 				";
 	    
