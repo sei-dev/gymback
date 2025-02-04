@@ -7,7 +7,7 @@
 
 	<body>
       <div class="card">
-      <div style="border-radius:200px; height:200px; width:200px; background: #3d8cbc; margin:0 auto;">
+      <div style="border-radius:200px; height:200px; width:200px; background: #f4f4f47d; margin:0 auto;">
         <i class="checkmark">✓</i>
       </div>
         <h1>Success</h1> 
@@ -29,7 +29,7 @@
         background: #EBF0F5;
       }
         h1 {
-          color: #F8FAF5;
+          color: #3d8cbc;
           font-family: "Nunito Sans", "Helvetica Neue", sans-serif;
           font-weight: 900;
           font-size: 40px;
