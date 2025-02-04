@@ -29,7 +29,7 @@
         background: #EBF0F5;
       }
         h1 {
-          color: #3d8cbc;
+          color: #F8FAF5;
           font-family: "Nunito Sans", "Helvetica Neue", sans-serif;
           font-weight: 900;
           font-size: 40px;
@@ -42,7 +42,7 @@
           margin: 0;
         }
       i {
-        color: #9ABC66;
+        color: #3d8cbc;
         font-size: 100px;
         line-height: 200px;
         margin-left:-15px;
