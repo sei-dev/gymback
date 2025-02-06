@@ -87,6 +87,11 @@ class Log extends Controller {
          echo $this->render->view('manager/success');
      }
      
+     public function error(){
+         
+         echo $this->render->view('manager/error');
+     }
+     
      public function callback(){
          
          var_dump($_POST);

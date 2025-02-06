@@ -8,10 +8,10 @@
 	<body>
       <div class="card">
       <div style="border-radius:200px; height:200px; width:200px; background: #f4f4f47d; margin:0 auto;">
-        <i class="checkmark">✓</i>
+        <i class="fa-solid fa-x"></i>
       </div>
-        <h1>Success</h1> 
-        <p>Your subscription has been extended.<br/>Please restart the application!<br/>If you encounter some error, please contact support.</p>
+        <h1>An Error occured</h1> 
+        <p>Your payment has not been processed.<br/>Please try again later.<br/>If error persists, please contact support.</p>
       </div>
     </body>
 	<!-- <div class="box-footer clearfix no-border">
