@@ -11,7 +11,7 @@
         <i class="checkmark">X</i>
       </div>
         <h1>An Error occured</h1> 
-        <p>Your payment has not been processed.<br/>Please try again later.<br/>If error persists, please contact support.</p>
+        <p>Your payment has not been processed.<br/>Please try again later.<br/>If error persists, please contact the support.</p>
       </div>
     </body>
 	<!-- <div class="box-footer clearfix no-border">
