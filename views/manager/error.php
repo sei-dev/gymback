@@ -8,7 +8,7 @@
 	<body>
       <div class="card">
       <div style="border-radius:200px; height:200px; width:200px; background: #f4f4f47d; margin:0 auto;">
-        <i class="fa fa-times"></i>
+        <i class="fa fa-times fa-6"></i>
       </div>
         <h1>An Error occured</h1> 
         <p>Your payment has not been processed.<br/>Please try again later.<br/>If error persists, please contact support.</p>
@@ -43,6 +43,8 @@
         }
       i {
         color: #3d8cbc;
+        height: 100%;
+        width: 100%;
         font-size: 100px;
         line-height: 200px;
         margin-left:-15px;
