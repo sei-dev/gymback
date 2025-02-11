@@ -4,7 +4,7 @@
     </div>
     
     <div class="login-box-body">
-    <?php echo "<div class='error'>";
+    <?php echo "<div class='error-text' style='color: #dd4b39;'>";
     if (isset($_SESSION["messages"]["errors"]["login"])) {
         echo $_SESSION["messages"]["errors"]["login"];
     }
