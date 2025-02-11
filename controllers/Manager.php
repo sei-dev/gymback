@@ -66,8 +66,8 @@ class Manager extends Controller
         $data["count"] = $count;
         
         array_walk($data["users"], function (&$a) {
-            if ($this->isFileExists(self::DIR_USERS, $a["id"])) {
-                $a['image'] = "https://phpstack-1301327-4919665.cloudwaysapps.com//images/users/" . $a["id"] . ".png?r=" . rand(0, 100000);
+            if ($this->checkImageExists("https://phpstack-1301327-4919665.cloudwaysapps.com/images/users/" . $a["id"] . ".png?r=" . rand(0, 100000))) {
+                $a['image'] = "https://phpstack-1301327-4919665.cloudwaysapps.com/images/users/" . $a["id"] . ".png?r=" . rand(0, 100000);
             } else {
                 $a['image'] = "https://phpstack-1301327-4732761.cloudwaysapps.com/images/ikonica.ico";
             }
