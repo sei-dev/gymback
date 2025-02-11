@@ -50,7 +50,7 @@ class Manager extends Controller
             }
         });
 
-        // die(var_dump($data["users"]));
+        die(var_dump($data["users"]));
 
         // Render and pass data to the view
         echo $this->render->view('manager/index', $data);
@@ -65,13 +65,13 @@ class Manager extends Controller
         $data["pagination"] = $this->getPagination("/manager/index", $count, 10);
         $data["count"] = $count;
         
-        /* array_walk($data["users"], function (&$a) {
-         if ($this->isFileExists(self::DIR_USERS, $a["id"])) {
-         $a['image'] = $this->domain . "/images/users/" . $a["id"] . ".png?r=" . rand(0, 100000);
-         } else {
-         $a['image'] = $this->domain . "/images/users/logo.png";
-         }
-         }); */
+        array_walk($data["users"], function (&$a) {
+            if ($this->isFileExists(self::DIR_USERS, $a["id"])) {
+                $a['image'] = "https://phpstack-1301327-4919665.cloudwaysapps.com//images/users/" . $a["id"] . ".png?r=" . rand(0, 100000);
+            } else {
+                $a['image'] = "https://phpstack-1301327-4732761.cloudwaysapps.com/images/ikonica.ico";
+            }
+        });
         
         // die(var_dump($data["users"]));
         
