@@ -43,8 +43,8 @@ class Manager extends Controller
         $data["count"] = $count;
         
         array_walk($data["users"], function (&$a) {
-            if ($this->isFileExists(self::DIR_USERS, $a["id"])) {
-                $a['image'] = "https://phpstack-1301327-4919665.cloudwaysapps.com//images/users/" . $a["id"] . ".png?r=" . rand(0, 100000);
+            if ($this->checkImageExists("https://phpstack-1301327-4919665.cloudwaysapps.com/images/users/" . $a["id"] . ".png?r=" . rand(0, 100000))) {
+                $a['image'] = "https://phpstack-1301327-4919665.cloudwaysapps.com/images/users/" . $a["id"] . ".png?r=" . rand(0, 100000);
             } else {
                 $a['image'] = "https://phpstack-1301327-4732761.cloudwaysapps.com/images/ikonica.ico";
             }
@@ -747,6 +747,17 @@ class Manager extends Controller
     private function isFileExists($dir, $id)
     {
         return file_exists(self::DIR_UPLOADS . DIRECTORY_SEPARATOR . $dir . DIRECTORY_SEPARATOR . $id . ".png");
+    }
+    
+    function checkImageExists($url) {
+        $ch = curl_init($url);
+        curl_setopt($ch, CURLOPT_NOBODY, true);
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+        curl_setopt($ch, CURLOPT_TIMEOUT, 5);
+        curl_exec($ch);
+        $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        curl_close($ch);
+        return ($httpCode == 200);
     }
     
     /**
