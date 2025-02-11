@@ -4,11 +4,12 @@
     </div>
     
     <div class="login-box-body">
-    <?php echo "<div class='error-text' style='color: #dd4b39;'>";
+    <?php 
     if (isset($_SESSION["messages"]["errors"]["login"])) {
+        echo "<div class='error-text' style='color: #dd4b39;'>";
         echo $_SESSION["messages"]["errors"]["login"];
+        echo "</div>";
     }
-    echo "</div>";
     ?>
         <p class="login-box-msg"><?=$this->translate("Sign in to start your session");?></p>
         <form action="" method="post">
