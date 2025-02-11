@@ -668,7 +668,7 @@ class Manager extends Controller
         }
 
         $count = $model->count();
-        $data["pagination"] = $this->getPagination("/manager/index", $count, 10);
+        $data["pagination"] = $this->getPagination("/manager/measurements", $count, 10);
         $data["count"] = $count;
 
         // die(var_dump($data["users"]));
