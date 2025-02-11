@@ -4,10 +4,11 @@
     </div>
     
     <div class="login-box-body">
-    <?php 
+    <?php echo "<div class='error'>";
     if (isset($_SESSION["messages"]["errors"]["login"])) {
         echo $_SESSION["messages"]["errors"]["login"];
     }
+    echo "</div>";
     ?>
         <p class="login-box-msg"><?=$this->translate("Sign in to start your session");?></p>
         <form action="" method="post">
