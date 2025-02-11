@@ -62,7 +62,7 @@ class Manager extends Controller
         
         $data["users"] = $model->getAllClients($_GET["page"] ?? 1);
         $count = $model->count();
-        $data["pagination"] = $this->getPagination("/manager/index", $count, 10);
+        $data["pagination"] = $this->getPagination("/manager/clients", $count, 10);
         $data["count"] = $count;
         
         array_walk($data["users"], function (&$a) {
@@ -351,7 +351,7 @@ class Manager extends Controller
 
         $data["users"] = $model->searchTrainer($param, $_GET["page"] ?? 1);
         $count = $model->count();
-        $data["pagination"] = $this->getPagination("/manager/index", $count, 10);
+        $data["pagination"] = $this->getPagination("/manager/searchtrainer", $count, 10);
         $data["count"] = $count;
 
         /* array_walk($data["users"], function (&$a) {
