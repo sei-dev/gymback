@@ -50,7 +50,7 @@ class Manager extends Controller
             }
         });
 
-        die(var_dump($data["users"]));
+        //die(var_dump($data["users"]));
 
         // Render and pass data to the view
         echo $this->render->view('manager/index', $data);
