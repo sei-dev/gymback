@@ -104,7 +104,7 @@ class Log extends Controller {
      public function activate($hash){
          
          $users_model = new Users($this->getDbAdapter());
-         $users_model->activateEmail($hash);
+         $users_model->activateEmail($hash[0]);
          
          echo $this->render->view('manager/successmail');
      }
