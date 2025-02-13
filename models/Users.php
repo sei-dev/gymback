@@ -101,6 +101,7 @@ class Users extends ModelAbstract implements ModelInterface
 	public function activateEmail(string $hash) {
 	    
 	    $sQuery = "UPDATE users
+				SET email_confirmed = '1'
                 WHERE email_hash = '{$hash}'
 				";
 	    return $this->fetchAll($sQuery);
