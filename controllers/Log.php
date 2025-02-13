@@ -3,6 +3,7 @@
 
 use SEI\Auth;
 use SEI\Validation;
+use MODELS\Users;
 
 class Log extends Controller {
     
@@ -98,6 +99,14 @@ class Log extends Controller {
          die();
          
          //echo $this->render->view('manager/success');
+     }
+     
+     public function activate(){
+         
+         $users_model = new Users($this->getDbAdapter());
+         $users_model->activateEmail($hash);
+         
+         echo $this->render->view('manager/successmail');
      }
      
      public function out(){

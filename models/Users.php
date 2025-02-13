@@ -98,6 +98,14 @@ class Users extends ModelAbstract implements ModelInterface
 	        return $this->fetchAll($sQuery);
 	}
 	
+	public function activateEmail(string $hash) {
+	    
+	    $sQuery = "UPDATE users
+                WHERE email_hash = '{$hash}'
+				";
+	    return $this->fetchAll($sQuery);
+	}
+	
 	public function searchTrainer(string $param, int $page = 1, int $perPage = 10) {
 	    
 	    $start = ($page-1) * $perPage;
