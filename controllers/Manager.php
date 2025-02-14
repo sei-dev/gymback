@@ -35,7 +35,7 @@ class Manager extends Controller
      */
     public function index()
     {
-        $model = new Users();
+        $model = new Users($this->getDbAdapter());
 
         $data["users"] = $model->getAllTrainers($_GET["page"] ?? 1);
         $count = $model->count();
