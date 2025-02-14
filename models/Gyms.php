@@ -67,7 +67,7 @@ class Gyms extends ModelAbstract implements ModelInterface
 	public function upadateGym(string $id, string $name, string $address, string $city) {
 	    
 	    $sQuery = "UPDATE gyms
-				SET name = '{$name}', address = '{$address}', city='{$city_id}'
+				SET name = '{$name}', address = '{$address}', city_id='{$city}'
                 WHERE id = '{$id}';
 				";
 	    return $this->fetchAll($sQuery);
