@@ -523,8 +523,9 @@ class Manager extends Controller
             $name = $_POST["name"];
             $address = $_POST["address"];
             $city = $_POST["city"];
+            $phone = $_POST["phone"];
 
-            $model->upadateGym($id, $name, $address, $city);
+            $model->upadateGym($id, $name, $address, $city,$phone);
 
             $this->redirect("/manager/gyms");
         } else if ($this->isGet()) {
