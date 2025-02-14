@@ -61,7 +61,7 @@ class Manager extends Controller
         $model = new Users();
         
         $data["users"] = $model->getAllClients($_GET["page"] ?? 1);
-        $count = $model->count();
+        $count = count($data["users"]);
         $data["pagination"] = $this->getPagination("/manager/clients", $count, 10);
         $data["count"] = $count;
         
@@ -158,7 +158,7 @@ class Manager extends Controller
         $model = new Gyms();
         
         $data["items"] = $model->getUserGyms($id, $_GET["page"] ?? 1);
-        $count = $model->count();
+        $count = count($data["items"]);
         $data["pagination"] = $this->getPagination("/manager/gyms", $count, 10);
         $data["count"] = $count;
         
@@ -175,7 +175,7 @@ class Manager extends Controller
         $model = new Invoices();
         
         $data["items"] = $model->getUserInvoices($id, $_GET["page"] ?? 1);
-        $count = $model->count();
+        $count = count($data["items"]);
         $data["pagination"] = $this->getPagination("/manager/invoices", $count, 10);
         $data["count"] = $count;
         
@@ -218,7 +218,7 @@ class Manager extends Controller
             $e ++;
         }
         
-        $count = $model->count();
+        $count = count($data["items"]);
         $data["pagination"] = $this->getPagination("/manager/measurements", $count, 10);
         $data["count"] = $count;
         
