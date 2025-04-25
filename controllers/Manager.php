@@ -759,6 +759,36 @@ class Manager extends Controller
         
         $this->redirect("/manager/gyms");
     }
+    
+    public function removecity()
+    {
+        $id = intval($_GET["id"]);
+        
+        $model = new Cities();
+        
+        $model->removeCity($id);
+        $count = $model->count();
+        $data["pagination"] = $this->getPagination("/manager/clients", $count, 10);
+        $data["count"] = $count;
+        
+        
+        $this->redirect("/manager/gyms");
+    }
+    
+    public function removecountry()
+    {
+        $id = intval($_GET["id"]);
+        
+        $model = new Countries();
+        
+        $model->removeCountry($id);
+        $count = $model->count();
+        $data["pagination"] = $this->getPagination("/manager/clients", $count, 10);
+        $data["count"] = $count;
+        
+        
+        $this->redirect("/manager/gyms");
+    }
 
     private function isFileExists($dir, $id)
     {

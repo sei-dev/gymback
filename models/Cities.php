@@ -59,6 +59,13 @@ class Cities extends ModelAbstract implements ModelInterface
 	    return $this->fetchAll($sQuery);
 	}
 	
+	public function removeCity(string $id){
+	    
+	    $sQuery = "DELETE FROM cities WHERE id='{$id}'";
+	    
+	    return $this->fetchAll($sQuery);
+	}
+	
 	
 	/**
 	 *

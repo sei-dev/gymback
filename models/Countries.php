@@ -59,6 +59,12 @@ class Countries extends ModelAbstract implements ModelInterface
 	    return $this->fetchAll($sQuery);
 	}
 	
+	public function removeCountry(string $id){
+	    
+	    $sQuery = "DELETE FROM countries WHERE id='{$id}'";
+	    
+	    return $this->fetchAll($sQuery);
+	}
 	
 	/**
 	 *
