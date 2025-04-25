@@ -38,7 +38,7 @@ class Manager extends Controller
         $model = new Users($this->getDbAdapter());
 
         $data["users"] = $model->getAllTrainers($_GET["page"] ?? 1);
-        $count = $model->getTotalTr;
+        $count = $model->getTotalClientsCount();
         $data["pagination"] = $this->getPagination("/manager/index", $count, 10);
         $data["count"] = $count;
         
