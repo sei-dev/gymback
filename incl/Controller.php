@@ -101,23 +101,39 @@ class Controller {
      */
     public function getPagination($url, $count, $perPage = 10)
     {
-        $page = isset($_GET["page"])?intval($_GET["page"]):1;
-        $pages = ceil($count/$perPage);
+        $page = isset($_GET["page"]) ? intval($_GET["page"]) : 1;
+        $pages = ceil($count / $perPage);
         $html = '<ul class="pagination pagination-sm inline">';
-        if($page > 1){
-            $html .= '<li><a href="'.$url.'?page='.($page-1).'">«</a></li>';
+        
+        $start = max(1, $page - 3);
+        $end = min($pages, $page + 3);
+        
+        // Adjust range if we're near the start
+        if ($page <= 4) {
+            $end = min(7, $pages);
         }
         
-        for ($i = 1; $i <= $pages; $i++) {
+        // Adjust range if we're near the end
+        if ($page > $pages - 4) {
+            $start = max(1, $pages - 6);
+        }
+        
+        if ($page > 1) {
+            $html .= '<li><a href="' . $url . '?page=' . ($page - 1) . '">«</a></li>';
+        }
+        
+        for ($i = $start; $i <= $end; $i++) {
             if ($i == $page) {
-                $html .= '<li><a href="'.$url.'?page='.$i.'"><span class="">'.$i.'</span></a></li>';
-            }else{
-                $html .= '<li><a href="'.$url.'?page='.$i.'">'.$i.'</a></li>';
+                $html .= '<li class="active"><a href="' . $url . '?page=' . $i . '"><span>' . $i . '</span></a></li>';
+            } else {
+                $html .= '<li><a href="' . $url . '?page=' . $i . '">' . $i . '</a></li>';
             }
         }
-        if($pages > $page){
-            $html .= '<li><a href="'.$url.'?page='.($page+1).'">»</a></li>';
+        
+        if ($page < $pages) {
+            $html .= '<li><a href="' . $url . '?page=' . ($page + 1) . '">»</a></li>';
         }
+        
         $html .= '</ul>';
         return $html;
     }
