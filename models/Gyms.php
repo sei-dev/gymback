@@ -91,6 +91,13 @@ class Gyms extends ModelAbstract implements ModelInterface
 	    return $this->fetchAll($sQuery);
 	}
 	
+	public function removeGym(string $id){
+	    
+	    $sQuery = "DELETE FROM gyms WHERE id='{$id}'";
+	    
+	    return $this->fetchAll($sQuery);
+	}
+	
 	/**
 	 *
 	 * @param string $email

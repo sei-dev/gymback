@@ -744,6 +744,21 @@ class Manager extends Controller
         // Render and pass data to the view
         echo $this->render->view('manager/editmeasurements', $data);
     }
+    
+    public function removegym()
+    {
+        $id = intval($_GET["id"]);
+        
+        $model = new Gyms();
+        
+        $model->removeGym($id);
+        $count = $model->count();
+        $data["pagination"] = $this->getPagination("/manager/clients", $count, 10);
+        $data["count"] = $count;
+        
+        
+        $this->redirect("/manager/gyms");
+    }
 
     private function isFileExists($dir, $id)
     {
