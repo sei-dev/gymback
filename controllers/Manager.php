@@ -249,7 +249,7 @@ class Manager extends Controller
         
         $data["items"] = $model->getAll($_GET["page"] ?? 1);
         $count = $model->count();
-        $data["pagination"] = $this->getPagination("/manager/cities", $count, 10);
+        $data["pagination"] = $this->getPagination("/manager/countries", $count, 10);
         $data["count"] = $count;
         
         // die(var_dump($data["users"]));
