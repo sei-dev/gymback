@@ -146,13 +146,12 @@ class Users extends ModelAbstract implements ModelInterface
 	
 	public function getTotalTrainersCount() {
 	    $sQuery = "SELECT COUNT(*) as total FROM users WHERE is_trainer = 1";
-	    die(var_dump($this->fetchAll($sQuery)));
-	    return $this->fetchAll($sQuery)["total"];
+	    return $this->fetchAll($sQuery)['0']["total"];
 	}
 	
 	public function getTotalClientsCount() {
 	    $sQuery = "SELECT COUNT(*) as total FROM users WHERE is_trainer = 0";
-	    return $this->fetchAll($sQuery)["total"];
+	    return $this->fetchAll($sQuery)['0']["total"];
 	}
 	
 	
