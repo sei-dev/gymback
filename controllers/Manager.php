@@ -40,7 +40,7 @@ class Manager extends Controller
         $data["users"] = $model->getAllTrainers($_GET["page"] ?? 1);
         $count = count($data["users"]);
         $data["pagination"] = $this->getPagination("/manager/index", $count, 10);
-        $data["count"] = $count;
+        $data["count"] = $model->count();
         
         array_walk($data["users"], function (&$a) {
             if ($this->checkImageExists("https://phpstack-1301327-4919665.cloudwaysapps.com/images/users/" . $a["id"] . ".png?r=" . rand(0, 100000))) {
