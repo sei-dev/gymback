@@ -354,13 +354,13 @@ class Manager extends Controller
         $data["pagination"] = $this->getPagination("/manager/searchtrainer", $count, 10);
         $data["count"] = $count;
 
-        /* array_walk($data["users"], function (&$a) {
+        array_walk($data["users"], function (&$a) {
             if ($this->isFileExists(self::DIR_USERS, $a["id"])) {
                 $a['image'] = $this->domain . "/images/users/" . $a["id"] . ".png?r=" . rand(0, 100000);
             } else {
                 $a['image'] = $this->domain . "/images/users/logo.png";
             }
-        }); */
+        });
         
         /*
          * $data["items"] = $model->searchGym($param, $_GET["page"] ?? 1);
