@@ -144,6 +144,15 @@ class Users extends ModelAbstract implements ModelInterface
 		return $this->getDbAdapter()->insert($data);
 	}
 	
+	public function getTotalTrainersCount() {
+	    $sQuery = "SELECT COUNT(*) as total FROM users WHERE is_trainer = 1";
+	    return $this->fetchOne($sQuery)["total"];
+	}
+	
+	public function getTotalClientsCount() {
+	    $sQuery = "SELECT COUNT(*) as total FROM users WHERE is_trainer = 0";
+	    return $this->fetchOne($sQuery)["total"];
+	}
 	
 	
 	/**

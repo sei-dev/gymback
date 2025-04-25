@@ -38,7 +38,7 @@ class Manager extends Controller
         $model = new Users($this->getDbAdapter());
 
         $data["users"] = $model->getAllTrainers($_GET["page"] ?? 1);
-        $count = $model->count();
+        $count = $model->getTotalTrainersCount();
         $data["pagination"] = $this->getPagination("/manager/index", $count, 10);
         $data["count"] = $count;
         
@@ -61,7 +61,7 @@ class Manager extends Controller
         $model = new Users();
         
         $data["users"] = $model->getAllClients($_GET["page"] ?? 1);
-        $count = count($data["users"]);
+        $count = $model->getTotalClientsCount();
         $data["pagination"] = $this->getPagination("/manager/clients", $count, 10);
         $data["count"] = $count;
         
