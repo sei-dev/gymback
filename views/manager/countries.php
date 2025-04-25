@@ -11,7 +11,7 @@
             <div class="row">
             <div class="col-md-11"><?=$one["country"]?></div>
             <div class="col-md-1 tools">
-                <i class="fa fa-trash-o"></i>
+                <a href="/manager/removecountry?id=<?=$one["id"]?>"><i class="fa fa-trash-o" title="Remove"></i></a>
             </div>
         	</div>
         <?php endforeach;?>

@@ -753,7 +753,7 @@ class Manager extends Controller
         
         $model->removeGym($id);
         $count = $model->count();
-        $data["pagination"] = $this->getPagination("/manager/clients", $count, 10);
+        $data["pagination"] = $this->getPagination("/manager/gyms", $count, 10);
         $data["count"] = $count;
         
         
@@ -768,11 +768,11 @@ class Manager extends Controller
         
         $model->removeCity($id);
         $count = $model->count();
-        $data["pagination"] = $this->getPagination("/manager/clients", $count, 10);
+        $data["pagination"] = $this->getPagination("/manager/cities", $count, 10);
         $data["count"] = $count;
         
         
-        $this->redirect("/manager/gyms");
+        $this->redirect("/manager/cities");
     }
     
     public function removecountry()
@@ -783,11 +783,11 @@ class Manager extends Controller
         
         $model->removeCountry($id);
         $count = $model->count();
-        $data["pagination"] = $this->getPagination("/manager/clients", $count, 10);
+        $data["pagination"] = $this->getPagination("/manager/countries", $count, 10);
         $data["count"] = $count;
         
         
-        $this->redirect("/manager/gyms");
+        $this->redirect("/manager/countries");
     }
 
     private function isFileExists($dir, $id)

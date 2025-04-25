@@ -12,7 +12,7 @@
             <div class="col-md-6"><?=$one["city"]?></div>
             <div class="col-md-5"><?=$one["country"]?></div>
             <div class="col-md-1 tools">
-                <i class="fa fa-trash-o"></i>
+                <a href="/manager/removecity?id=<?=$one["id"]?>"><i class="fa fa-trash-o" title="Remove"></i></a>
             </div>
         	</div>
         <?php endforeach;?>
