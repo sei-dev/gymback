@@ -158,8 +158,7 @@ class Users extends ModelAbstract implements ModelInterface
 	    $param = "%{$param}%"; // wildcard search
 	    
 	    $query = "SELECT COUNT(*) as total FROM users
-              WHERE is_trainer = 1
-              AND (first_name LIKE ? OR last_name LIKE ?)";
+              WHERE is_trainer = 1 AND (first_name LIKE '%{$param}%' OR last_name LIKE '%{$param}%')";
 	    
 	    return $this->fetchAll($query)['0']["total"];
 	}
@@ -168,8 +167,7 @@ class Users extends ModelAbstract implements ModelInterface
 	    $param = "%{$param}%"; // wildcard search
 	    
 	    $query = "SELECT COUNT(*) as total FROM users
-              WHERE is_trainer = 0
-              AND (first_name LIKE ? OR last_name LIKE ?)";
+              WHERE is_trainer = 0 AND (first_name LIKE '%{$param}%' OR last_name LIKE '%{$param}%')";
 	    
 	    return $this->fetchAll($query)['0']["total"];
 	}
