@@ -68,7 +68,12 @@ class Trainings extends ModelAbstract implements ModelInterface
 		return $this->getDbAdapter()->insert($data);
 	}
 	
-	
+	public function removeTraining(string $id){
+	    
+	    $sQuery = "DELETE FROM training WHERE id='{$id}'";
+	    
+	    return $this->fetchAll($sQuery);
+	}
 	
 	/**
 	 *

@@ -23,7 +23,7 @@
             <div class="col-md-1 label label-danger"><i class="fa fa-clock-o"></i> <?=$this->humanReadable($one["created_at"])?></div>
             <div class="col-md-1 tools">
                 <!-- <a href="/manager/edittraining?id=<?=$one["id"]?>"><i class="fa fa-edit"></i></a> -->
-                <i class="fa fa-trash-o"></i>
+                <a href="/manager/editgym?id=<?=$one["id"]?>"><i class="fa fa-trash-o"></i></a>
             </div>
             </div>
         <?php endforeach;?>

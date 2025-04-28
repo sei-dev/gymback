@@ -760,6 +760,21 @@ class Manager extends Controller
         $this->redirect("/manager/gyms");
     }
     
+    public function removetraining()
+    {
+        $id = intval($_GET["id"]);
+        
+        $model = new Trainings();
+        
+        $model->removeTraining($id);
+        $count = $model->count();
+        $data["pagination"] = $this->getPagination("/manager/gyms", $count, 10);
+        $data["count"] = $count;
+        
+        
+        $this->redirect("/manager/trainings");
+    }
+    
     public function removecity()
     {
         $id = intval($_GET["id"]);
