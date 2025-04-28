@@ -64,6 +64,15 @@ class Measurements extends ModelAbstract implements ModelInterface
 	    return $this->fetchAll($sQuery);
 	}
 	
+	public function removeMeasurement(string $id){
+	    
+	    $sQuery = "DELETE FROM ".self::getTablePrefix().$this->table." WHERE id='{$id}'";
+	    
+	    return $this->fetchAll($sQuery);
+	}
+	
+	
+	
 	/**
 	 *
 	 * @param string $email
@@ -80,6 +89,7 @@ class Measurements extends ModelAbstract implements ModelInterface
 		
 		return $this->getDbAdapter()->insert($data);
 	}
+	
 	
 	
 	

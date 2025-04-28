@@ -36,7 +36,7 @@
             </div>
             <div class="col-md-1 tools">
                 <!-- <a href="/manager/editmeasurements?id=<?=$one["id"]?>"><i class="fa fa-edit"></i></a> -->
-                <i class="fa fa-trash-o"></i>
+                <a href="/manager/removemeas?id=<?=$one["id"]?>"><i class="fa fa-trash-o"></i></a>
             </div>
         </div>
     <?php endforeach; ?>
