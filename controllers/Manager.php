@@ -350,9 +350,9 @@ class Manager extends Controller
         
 
         $data["users"] = $model->searchTrainer($param, $_GET["page"] ?? 1);
-        $count = $model->count();
+        $count = $model->countSearchedTrainers($param);
         $data["pagination"] = $this->getPagination("/manager/searchtrainer", $count, 10);
-        $data["count"] = $model->countSearchedTrainers($param);
+        $data["count"] = $count;
 
         array_walk($data["users"], function (&$a) {
             if ($this->checkImageExists("https://phpstack-1301327-4919665.cloudwaysapps.com/images/users/" . $a["id"] . ".png?r=" . rand(0, 100000))) {
@@ -373,9 +373,9 @@ class Manager extends Controller
         
         
         $data["users"] = $model->searchClient($param, $_GET["page"] ?? 1);
-        $count = $model->count();
+        $count = $model->countSearchedClients($param);
         $data["pagination"] = $this->getPagination("/manager/clients", $count, 10);
-        $data["count"] = $model->countSearchedClients($param);
+        $data["count"] = $count;
         
         /* array_walk($data["users"], function (&$a) {
          if ($this->isFileExists(self::DIR_USERS, $a["id"])) {
