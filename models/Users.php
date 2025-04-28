@@ -154,6 +154,25 @@ class Users extends ModelAbstract implements ModelInterface
 	    return $this->fetchAll($sQuery)['0']["total"];
 	}
 	
+	public function countSearchedTrainers($param) {
+	    $param = "%{$param}%"; // wildcard search
+	    
+	    $query = "SELECT COUNT(*) as total FROM users
+              WHERE is_trainer = 1
+              AND (first_name LIKE ? OR last_name LIKE ?)";
+	    
+	    return $this->fetchAll($query)['0']["total"];
+	}
+	
+	public function countSearchedClients($param) {
+	    $param = "%{$param}%"; // wildcard search
+	    
+	    $query = "SELECT COUNT(*) as total FROM users
+              WHERE is_trainer = 0
+              AND (first_name LIKE ? OR last_name LIKE ?)";
+	    
+	    return $this->fetchAll($query)['0']["total"];
+	}
 	
 	/**
 	 *

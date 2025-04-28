@@ -352,7 +352,7 @@ class Manager extends Controller
         $data["users"] = $model->searchTrainer($param, $_GET["page"] ?? 1);
         $count = $model->count();
         $data["pagination"] = $this->getPagination("/manager/searchtrainer", $count, 10);
-        $data["count"] = $count;
+        $data["count"] = $model->countSearchedTrainers($param);
 
         /* array_walk($data["users"], function (&$a) {
             if ($this->isFileExists(self::DIR_USERS, $a["id"])) {
@@ -382,7 +382,7 @@ class Manager extends Controller
         $data["users"] = $model->searchClient($param, $_GET["page"] ?? 1);
         $count = $model->count();
         $data["pagination"] = $this->getPagination("/manager/clients", $count, 10);
-        $data["count"] = $count;
+        $data["count"] = $model->countSearchedClients($param);
         
         /* array_walk($data["users"], function (&$a) {
          if ($this->isFileExists(self::DIR_USERS, $a["id"])) {
