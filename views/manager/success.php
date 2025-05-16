@@ -34,12 +34,12 @@
 
     .checkmark {
       font-size: 100px;
-      color: #4CAF50;
+      color: #0061FF;
       line-height: 1;
     }
 
     h1 {
-      color: #4CAF50;
+      color: #0061FF;
       font-size: 36px;
       margin-bottom: 10px;
     }
