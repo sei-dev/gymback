@@ -1,5 +1,5 @@
 <?php
-header("Refresh: 4; URL=myapp://paymentresult?status=success");
+header("Refresh: 4; URL=myapp://paymentresult?status=error");
 ?>
 <!DOCTYPE html>
 <html>
