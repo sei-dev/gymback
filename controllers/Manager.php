@@ -674,43 +674,6 @@ class Manager extends Controller
     public function tof()
     {
 
-        // $model = new Measurements();
-
-        // $user_model = new Users();
-
-        // $users = $user_model->getAllUsers();
-
-        // $data["items"] = $model->getAll($_GET["page"]??1);
-
-        /*
-         * $i=0;
-         * $e=0;
-         *
-         * foreach ($data["items"] as $measurement){
-         * foreach ($users as $user){
-         * if($measurement["trainer_id"]==$user["id"]){
-         * $data["items"][$i]["trainer_name"] = $user["first_name"] ." ". $user["last_name"];
-         * }
-         * }
-         * $i++;
-         * }
-         *
-         * foreach ($data["items"] as $measurement){
-         * foreach ($users as $user){
-         * if($measurement["client_id"]==$user["id"]){
-         * $data["items"][$e]["client_name"] = $user["first_name"] ." ". $user["last_name"];
-         * }
-         * }
-         * $e++;
-         * }
-         */
-
-        // $count = $model->count();
-        // $data["pagination"] = $this->getPagination("/manager/index", $count, 10);
-        // $data["count"] = $count;
-
-        // die(var_dump($data["users"]));
-
         // Render and pass data to the view
         echo $this->render->view('manager/termsofservice');
     }
@@ -718,44 +681,6 @@ class Manager extends Controller
     public function paymentconditions()
     {
         
-        // $model = new Measurements();
-        
-        // $user_model = new Users();
-        
-        // $users = $user_model->getAllUsers();
-        
-        // $data["items"] = $model->getAll($_GET["page"]??1);
-        
-        /*
-         * $i=0;
-         * $e=0;
-         *
-         * foreach ($data["items"] as $measurement){
-         * foreach ($users as $user){
-         * if($measurement["trainer_id"]==$user["id"]){
-         * $data["items"][$i]["trainer_name"] = $user["first_name"] ." ". $user["last_name"];
-         * }
-         * }
-         * $i++;
-         * }
-         *
-         * foreach ($data["items"] as $measurement){
-         * foreach ($users as $user){
-         * if($measurement["client_id"]==$user["id"]){
-         * $data["items"][$e]["client_name"] = $user["first_name"] ." ". $user["last_name"];
-         * }
-         * }
-         * $e++;
-         * }
-         */
-        
-        // $count = $model->count();
-        // $data["pagination"] = $this->getPagination("/manager/index", $count, 10);
-        // $data["count"] = $count;
-        
-        // die(var_dump($data["users"]));
-        
-        // Render and pass data to the view
         echo $this->render->view('manager/paymentconditions');
     }
 
