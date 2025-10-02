@@ -83,6 +83,12 @@ class Log extends Controller {
          echo $this->render->view('manager/termsofservice');
      }
      
+     public function paymentconditions()
+     {
+         echo $this->render->view('manager/paymentconditions');
+     }
+     
+     
      public function success(){
          
          echo $this->render->view('manager/success');

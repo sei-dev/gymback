@@ -13,9 +13,11 @@ class Manager extends Controller
 {
 
     const DIR_USERS = "users";
+
     const DIR_UPLOADS = __DIR__ . "/../../images/";
-    //protected $domain = "https://phpstack-1301327-4919665.cloudwaysapps.com/";
-    
+
+    // protected $domain = "https://phpstack-1301327-4919665.cloudwaysapps.com/";
+
     /**
      * On Construct call parent construct
      */
@@ -41,7 +43,7 @@ class Manager extends Controller
         $count = $model->getTotalTrainersCount();
         $data["pagination"] = $this->getPagination("/manager/index", $count, 10);
         $data["count"] = $count;
-        
+
         array_walk($data["users"], function (&$a) {
             if ($this->checkImageExists("https://phpstack-1301327-4919665.cloudwaysapps.com/images/users/" . $a["id"] . ".png?r=" . rand(0, 100000))) {
                 $a['image'] = "https://phpstack-1301327-4919665.cloudwaysapps.com/images/users/" . $a["id"] . ".png?r=" . rand(0, 100000);
@@ -50,21 +52,21 @@ class Manager extends Controller
             }
         });
 
-        //die(var_dump($data["users"]));
+        // die(var_dump($data["users"]));
 
         // Render and pass data to the view
         echo $this->render->view('manager/index', $data);
     }
-    
+
     public function clients()
     {
         $model = new Users();
-        
+
         $data["users"] = $model->getAllClients($_GET["page"] ?? 1);
         $count = $model->getTotalClientsCount();
         $data["pagination"] = $this->getPagination("/manager/clients", $count, 10);
         $data["count"] = $count;
-        
+
         array_walk($data["users"], function (&$a) {
             if ($this->checkImageExists("https://phpstack-1301327-4919665.cloudwaysapps.com/images/users/" . $a["id"] . ".png?r=" . rand(0, 100000))) {
                 $a['image'] = "https://phpstack-1301327-4919665.cloudwaysapps.com/images/users/" . $a["id"] . ".png?r=" . rand(0, 100000);
@@ -72,9 +74,9 @@ class Manager extends Controller
                 $a['image'] = "https://phpstack-1301327-4732761.cloudwaysapps.com/images/ikonica.ico";
             }
         });
-        
+
         // die(var_dump($data["users"]));
-        
+
         // Render and pass data to the view
         echo $this->render->view('manager/clients', $data);
     }
@@ -150,56 +152,56 @@ class Manager extends Controller
         // Render and pass data to the view
         echo $this->render->view('manager/gyms', $data);
     }
-    
+
     public function usergyms()
     {
         $id = intval($_GET["id"]);
-        
+
         $model = new Gyms();
-        
+
         $data["items"] = $model->getUserGyms($id, $_GET["page"] ?? 1);
         $count = count($data["items"]);
         $data["pagination"] = $this->getPagination("/manager/gyms", $count, 10);
         $data["count"] = $count;
-        
+
         // die(var_dump($data["users"]));
-        
+
         // Render and pass data to the view
         echo $this->render->view('manager/gyms', $data);
     }
-    
+
     public function userinvoices()
     {
         $id = intval($_GET["id"]);
-        
+
         $model = new Invoices();
-        
+
         $data["items"] = $model->getUserInvoices($id, $_GET["page"] ?? 1);
         $count = count($data["items"]);
         $data["pagination"] = $this->getPagination("/manager/invoices", $count, 10);
         $data["count"] = $count;
-        
+
         // die(var_dump($data["users"]));
-        
+
         // Render and pass data to the view
         echo $this->render->view('manager/invoices', $data);
     }
-    
+
     public function usermeasurements()
     {
         $id = intval($_GET["id"]);
-        
+
         $model = new Measurements();
-        
+
         $user_model = new Users();
-        
+
         $users = $user_model->getAllUsers();
-        
+
         $data["items"] = $model->getUserMeasurements($id, $_GET["page"] ?? 1);
-        
+
         $i = 0;
         $e = 0;
-        
+
         foreach ($data["items"] as $measurement) {
             foreach ($users as $user) {
                 if ($measurement["trainer_id"] == $user["id"]) {
@@ -208,7 +210,7 @@ class Manager extends Controller
             }
             $i ++;
         }
-        
+
         foreach ($data["items"] as $measurement) {
             foreach ($users as $user) {
                 if ($measurement["client_id"] == $user["id"]) {
@@ -217,13 +219,13 @@ class Manager extends Controller
             }
             $e ++;
         }
-        
+
         $count = count($data["items"]);
         $data["pagination"] = $this->getPagination("/manager/measurements", $count, 10);
         $data["count"] = $count;
-        
+
         // die(var_dump($data["users"]));
-        
+
         // Render and pass data to the view
         echo $this->render->view('manager/measurements', $data);
     }
@@ -242,18 +244,18 @@ class Manager extends Controller
         // Render and pass data to the view
         echo $this->render->view('manager/cities', $data);
     }
-    
+
     public function countries()
     {
         $model = new Countries();
-        
+
         $data["items"] = $model->getAll($_GET["page"] ?? 1);
         $count = $model->count();
         $data["pagination"] = $this->getPagination("/manager/countries", $count, 10);
         $data["count"] = $count;
-        
+
         // die(var_dump($data["users"]));
-        
+
         // Render and pass data to the view
         echo $this->render->view('manager/countries', $data);
     }
@@ -296,49 +298,46 @@ class Manager extends Controller
 
         echo $this->render->view('manager/gyms', $data);
     }
-    
+
     public function subscriptions()
     {
-        
         $model = new Subscriptions();
-        
+
         $data["items"] = $model->getAll();
         $count = sizeof($data["items"]);
         $data["pagination"] = $this->getPagination("/manager/subscriptions", $count, 10);
         $data["count"] = sizeof($data["items"]);
-        
+
         echo $this->render->view('manager/subscriptions', $data);
     }
-    
+
     public function editsubscription()
     {
-        
         $id = intval($_GET["id"]);
-        
+
         $model = new Subscriptions();
-        
+
         $data["subscription"] = $model->getById($id);
-        
+
         if ($data["subscription"] == false) {
             $this->redirect("/manager/index");
             // throw new Exception("No such user");
         }
-        
-        //die(var_dump($data["subscription"]));
-        
+
+        // die(var_dump($data["subscription"]));
+
         echo $this->render->view('manager/editsubscription', $data);
     }
-    
+
     public function invoices()
     {
-        
         $model = new Invoices();
-        
+
         $data["items"] = $model->getAll($_GET["page"] ?? 1);
         $count = $model->getTotalCount();
         $data["pagination"] = $this->getPagination("/manager/invoices", $count, 10);
         $data["count"] = $count;
-        
+
         echo $this->render->view('manager/invoices', $data);
     }
 
@@ -347,7 +346,6 @@ class Manager extends Controller
         $param = $_POST["param"];
 
         $model = new Users();
-        
 
         $data["users"] = $model->searchTrainer($param, $_GET["page"] ?? 1);
         $count = $model->countSearchedTrainers($param);
@@ -364,76 +362,75 @@ class Manager extends Controller
 
         echo $this->render->view('manager/index', $data);
     }
-    
+
     public function searchclient()
     {
         $param = $_POST["param"];
-        
+
         $model = new Users();
-        
-        
+
         $data["users"] = $model->searchClient($param, $_GET["page"] ?? 1);
         $count = $model->countSearchedClients($param);
         $data["pagination"] = $this->getPagination("/manager/clients", $count, 10);
         $data["count"] = $count;
-        
-        /* array_walk($data["users"], function (&$a) {
-         if ($this->isFileExists(self::DIR_USERS, $a["id"])) {
-         $a['image'] = $this->domain . "/images/users/" . $a["id"] . ".png?r=" . rand(0, 100000);
-         } else {
-         $a['image'] = $this->domain . "/images/users/logo.png";
-         }
-         }); */
-        
+
+        /*
+         * array_walk($data["users"], function (&$a) {
+         * if ($this->isFileExists(self::DIR_USERS, $a["id"])) {
+         * $a['image'] = $this->domain . "/images/users/" . $a["id"] . ".png?r=" . rand(0, 100000);
+         * } else {
+         * $a['image'] = $this->domain . "/images/users/logo.png";
+         * }
+         * });
+         */
+
         /*
          * $data["items"] = $model->searchGym($param, $_GET["page"] ?? 1);
          * $count = sizeof($data["items"]);
          * $data["pagination"] = $this->getPagination("/manager/gyms", $count, 10);
          * $data["count"] = sizeof($data["items"]);
          */
-        
+
         echo $this->render->view('manager/clients', $data);
     }
-    
+
     public function disableclient()
     {
         $id = intval($_GET["id"]);
-        
+
         $model = new Users();
-        
+
         $model->disableUser($id, $_GET["page"] ?? 1);
         $count = $model->count();
         $data["pagination"] = $this->getPagination("/manager/clients", $count, 10);
         $data["count"] = $count;
-        
 
         $this->redirect("/manager/clients");
     }
-    
+
     public function disabletrainer()
     {
         $id = intval($_GET["id"]);
-        
+
         $model = new Users();
-        
+
         $model->disableUser($id, $_GET["page"] ?? 1);
         $count = $model->count();
         $data["pagination"] = $this->getPagination("/manager/clients", $count, 10);
         $data["count"] = $count;
-        
-        
+
         $this->redirect("/manager/index");
     }
 
     public function addcity()
     {
         $country_model = new Countries();
-        
+
         $data['countries'] = $country_model->getAll();
-        
+
         echo $this->render->view('manager/addcity', $data);
     }
-    
+
     public function addcountry()
     {
         echo $this->render->view('manager/addcountry');
@@ -461,21 +458,21 @@ class Manager extends Controller
     public function insertcountry()
     {
         $model = new Countries();
-        
+
         if ($this->isPost()) {
-            
+
             $name = $_POST["country"];
-            
+
             $model->addCity($name);
-            
+
             $this->redirect("/manager/countries");
         } else if ($this->isGet()) {
             $data["messages"] = @$_SESSION["messages"];
         }
-        
+
         echo $this->render->view('manager/addcountry', $data);
     }
-    
+
     public function addGym()
     {
         $model = new Cities();
@@ -518,7 +515,7 @@ class Manager extends Controller
             $city = $_POST["city"];
             $phone = $_POST["phone"];
 
-            $model->upadateGym($id, $name, $address, $city,$phone);
+            $model->upadateGym($id, $name, $address, $city, $phone);
 
             $this->redirect("/manager/gyms");
         } else if ($this->isGet()) {
@@ -527,23 +524,23 @@ class Manager extends Controller
 
         echo $this->render->view('manager/editgym', $data);
     }
-    
+
     public function updatesubscription()
     {
         $model = new Subscriptions();
-        
+
         if ($this->isPost()) {
-            
+
             $id = $_POST["id"];
             $price = $_POST["price"];
-            
+
             $model->updateSubscription($price, $id);
-            
+
             $this->redirect("/manager/subscriptions");
         } else if ($this->isGet()) {
             $data["messages"] = @$_SESSION["messages"];
         }
-        
+
         echo $this->render->view('manager/editsubscription', $data);
     }
 
@@ -677,13 +674,6 @@ class Manager extends Controller
         // Render and pass data to the view
         echo $this->render->view('manager/termsofservice');
     }
-    
-    public function paymentconditions()
-    {
-        
-        echo $this->render->view('manager/paymentconditions');
-    }
-
     /**
      *
      * @return string
@@ -706,79 +696,74 @@ class Manager extends Controller
         // Render and pass data to the view
         echo $this->render->view('manager/editmeasurements', $data);
     }
-    
+
     public function removegym()
     {
         $id = intval($_GET["id"]);
-        
+
         $model = new Gyms();
-        
+
         $model->removeGym($id);
         $count = $model->count();
         $data["pagination"] = $this->getPagination("/manager/gyms", $count, 10);
         $data["count"] = $count;
-        
-        
+
         $this->redirect("/manager/gyms");
     }
-    
+
     public function removetraining()
     {
         $id = intval($_GET["id"]);
-        
+
         $model = new Trainings();
-        
+
         $model->removeTraining($id);
         $count = $model->count();
         $data["pagination"] = $this->getPagination("/manager/gyms", $count, 10);
         $data["count"] = $count;
-        
-        
+
         $this->redirect("/manager/trainings");
     }
-    
+
     public function removemeas()
     {
         $id = intval($_GET["id"]);
-        
+
         $model = new Measurements();
-        
+
         $model->removeMeasurement($id);
         $count = $model->count();
         $data["pagination"] = $this->getPagination("/manager/gyms", $count, 10);
         $data["count"] = $count;
-        
-        
+
         $this->redirect("/manager/measurements");
     }
-    
+
     public function removecity()
     {
         $id = intval($_GET["id"]);
-        
+
         $model = new Cities();
-        
+
         $model->removeCity($id);
         $count = $model->count();
         $data["pagination"] = $this->getPagination("/manager/cities", $count, 10);
         $data["count"] = $count;
-        
-        
+
         $this->redirect("/manager/cities");
     }
-    
+
     public function removecountry()
     {
         $id = intval($_GET["id"]);
-        
+
         $model = new Countries();
-        
+
         $model->removeCountry($id);
         $count = $model->count();
         $data["pagination"] = $this->getPagination("/manager/countries", $count, 10);
         $data["count"] = $count;
-        
-        
+
         $this->redirect("/manager/countries");
     }
 
@@ -786,8 +771,9 @@ class Manager extends Controller
     {
         return file_exists(self::DIR_UPLOADS . DIRECTORY_SEPARATOR . $dir . DIRECTORY_SEPARATOR . $id . ".png");
     }
-    
-    function checkImageExists($url) {
+
+    function checkImageExists($url)
+    {
         $ch = curl_init($url);
         curl_setopt($ch, CURLOPT_NOBODY, true);
         curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
@@ -797,7 +783,7 @@ class Manager extends Controller
         curl_close($ch);
         return ($httpCode == 200);
     }
-    
+
     /**
      * On destruct
      */
