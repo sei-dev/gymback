@@ -1,103 +1,120 @@
-<h3 class="heading-style"><?=$this->translate("Terms of service");?></h3>
+<?php
+// Ensure proper UTF-8 encoding for Serbian text
+header('Content-Type: text/html; charset=utf-8');
+?>
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Uslovi Korišćenja i Politika Privatnosti</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: linear-gradient(135deg, #EBF0F5, #D9E4FF);
+      font-family: "Helvetica Neue", -apple-system, BlinkMacSystemFont, sans-serif;
+      color: #333;
+    }
 
-<div class="box box-primary">
-	<div class="box-body"></div>
+    .container {
+      width: 90%;
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
 
-	<div class="box-footer" style="">
-		<h2 class="heading-style">USLOVI KORIŠĆENJA</h2>
+    h1, h2 {
+      color: #0061FF;
+      font-weight: 500;
+      margin: 0 0 1rem;
+    }
 
-		<br>
-		<br>
+    h1 {
+      font-size: 2rem;
+      text-align: center;
+    }
 
-		<p style="margin-left:20px; margin-right:20px;">
-			Dobrodošli na našu web stranicu. Molimo vas da pažljivo pročitate ove
-			Uslove korišćenja pre nego što počnete koristiti naš sajt.
-			Korišćenjem sajta, saglasni ste sa Uslovima korišćenja i našom
-			Politikom privatnosti.<br>
-			<br> 1. Opšte informacije<br>
-			<br> Ovaj sajt je u vlasništvu i pod upravom firme "Personalni
-			trener". Pristupom i korišćenjem ove stranice pristajete na uslove i
-			pravila koja su ovde navedena. Ako se ne slažete sa bilo kojim delom
-			ovih uslova, molimo vas da ne koristite naš sajt.<br>
-			<br> 2. Korišćenje usluga<br>
-			<br> Sve informacije na ovoj stranici pružaju se u informativne svrhe
-			i ne predstavljaju zamenu za profesionalni medicinski savet. Kao
-			korisnik, prihvatate da odgovornost za vašu fizičku spremnost,
-			zdravlje i bezbednost tokom vežbanja leži na vama. Konsultujte se sa
-			vašim lekarom pre početka bilo kog programa treninga.<br>
-			<br> 3. Prava intelektualne svojine<br>
-			<br> Svi sadržaji dostupni na ovom sajtu, uključujući tekstove,
-			slike, video materijale i logo, su vlasništvo firme "Personalni
-			trener" ili su licencirani za korišćenje. Neovlašćeno kopiranje,
-			distribucija ili modifikacija bilo kojeg dela sajta bez našeg
-			izričitog odobrenja je zabranjena.<br>
-			<br> 4. Izmene uslova korišćenja<br>
-			<br> Zadržavamo pravo da promenimo ove Uslove korišćenja u bilo kom
-			trenutku. Vaša dalja upotreba sajta nakon promena znači da prihvatate
-			sve izmenjene uslove.<br>
-			<br> 5. Ograničenje odgovornosti<br>
-			<br> "Personalni trener" neće biti odgovoran za bilo kakve direktne
-			ili indirektne štete nastale korišćenjem informacija ili usluga sa
-			sajta. Svi programi vežbanja sprovode se na vlastitu odgovornost
-			korisnika.
-		</p>
+    h2 {
+      font-size: 1.5rem;
+    }
 
-		<h2 class="heading-style">POLITIKA PRIVATNOSTI</h2>
+    p {
+      font-size: 1rem;
+      line-height: 1.6;
+      margin: 0 0 1rem;
+      color: #555;
+    }
 
-		<br>
-		<br>
+    .section {
+      margin-bottom: 2rem;
+    }
 
-		<p style="margin-left:20px; margin-right:20px;">
-			Ova Politika privatnosti objašnjava kako prikupljamo, koristimo i
-			štitimo vaše podatke dok koristite našu web stranicu i usluge.<br>
-			<br> 1. Koje podatke prikupljamo?<br>
-			<br> Prikupljamo lične podatke koje nam vi dobrovoljno dostavite,
-			uključujući vaše ime, email adresu, broj telefona, informacije o
-			fizičkom stanju i preferencije u vezi sa treningom. Ovi podaci nam
-			omogućavaju da personalizujemo naše usluge prema vašim potrebama.<br>
-			<br> 2. Kako koristimo vaše podatke?<br>
-			<br> Prikupljeni podaci koriste se za:<br>
-			<br> Pružanje i prilagođavanje usluga treninga<br>
-			<br> Komunikaciju sa vama o terminima treninga, novostima i
-			promocijama<br>
-			<br> Unapređenje korisničkog iskustva na sajtu<br>
-			<br> Ne delimo vaše podatke sa trećim stranama osim ako je to
-			zakonski zahtevano ili neophodno za pružanje usluga.<br>
-			<br> 3. Zaštita podataka<br>
-			<br> Koristimo odgovarajuće tehničke i organizacione mere kako bismo
-			zaštitili vaše podatke od neovlašćenog pristupa, gubitka ili izmene.
-			Ipak, nijedna metoda prenosa preko interneta ili metoda elektronskog
-			skladištenja nije 100% sigurna, te ne možemo garantovati apsolutnu
-			bezbednost podataka.<br>
-			<br> 4. Kolačići (Cookies)<br>
-			<br> Naša stranica koristi kolačiće kako bi unapredila funkcionalnost
-			i korisničko iskustvo. Korišćenjem sajta, pristajete na upotrebu
-			kolačića u skladu sa našom Politikom o kolačićima.<br>
-			<br> 5. Vaša prava<br>
-			<br> Imate pravo da pristupite, ispravite ili izbrišete vaše lične
-			podatke koje čuvamo. Takođe možete u bilo kom trenutku povući
-			saglasnost za obradu vaših podataka. Ako želite da ostvarite neka od
-			ovih prava, kontaktirajte nas na [email adresa].<br>
-			<br> 6. Izmene politike privatnosti<br>
-			<br> Zadržavamo pravo da promenimo ovu Politiku privatnosti u bilo
-			kom trenutku. Sve izmene će biti objavljene na ovoj stranici.<br>
-			<br> Ako imate bilo kakva pitanja u vezi sa našim Uslovima korišćenja
-			ili Politikom privatnosti, slobodno nas kontaktirajte na [email
-			adresa]
-		</p>
-	</div>
+    @media (max-width: 600px) {
+      .container {
+        padding: 1.5rem;
+        margin: 1rem;
+      }
 
-	<!-- <div class="box-footer clearfix no-border">
-    <button type="button" class="btn btn-default pull-right"><i class="fa fa-plus"></i> Add item</button>
-    </div> -->
+      h1 {
+        font-size: 1.5rem;
+      }
 
+      h2 {
+        font-size: 1.25rem;
+      }
 
+      p {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Uslovi Korišćenja i Politika Privatnosti</h1>
 
-</div>
+    <div class="section">
+      <h2>Uslovi Korišćenja</h2>
+      <p>
+        Prodaja usluga putem naše aplikacije PERSONALNI TRENER obavlja u okviru registrovane delatnosti privrednog društva PERSONA TRAINER doo, ulica: RATKA MITROVIĆA 75G, 11030, Beograd, matični broj 22066480.
+      </p>
+      <p>
+        Prodajna cena robe je naznačena uz svaki artikal, a mogućnost kupovine robe uz posebne cenovne pogodnosti ili uz posebne prodajne podsticaje (akcijska prodaja), obavlja u skladu sa uslovima koji su objavljeni na aplikaciji.
+      </p>
+      <p>
+        Nastojimo da budemo što precizniji u opisu proizvoda, prikazu slika i samih cena, ali ne možemo garantovati da su sve informacije kompletne i bez grešaka. Slike ne moraju biti 100% identične proizvodima. Svi artikli prikazani na sajtu su deo naše ponude i ne podrazumeva da su dostupni u svakom trenutku.
+      </p>
+    </div>
 
-
-
-
-<script>
-
-</script>
+    <div class="section">
+      <h2>Politika Privatnosti</h2>
+      <p>
+        Preduzeće PERSONAL TRAINER kao prodavac proizvoda i usluga na aplikaciji ulaže maksimalne napore radi zaštite Vaše privatnosti kad ste "online" kao korisnik. Vaše lične informacije se čuvaju na siguran i poverljiv način, i obrađuju na zakonit način u skladu sa ovom politikom privatnosti. Preduzimamo odgovarajuće tehničke i organizacione mere radi zaštite od neovlašćenog i nezakonitog pristupa i obrade vaših ličnih podataka, uključujući i enkripciju vaših informacija. Mi ćemo Vaše informacije zadržati onoliko dugo koliko je potrebno da obradimo Vaš nalog, Vaše plaćanje, odradimo refundaciju sredstava, odgovorimo na žalbu ili pružimo Vam promotivne informacije na koje ste se prijavili.
+      </p>
+      <p>
+        Ova Politika privatnosti reguliše praksu prikupljanja informacija od korisnika prilikom korišćenja aplikacije PERSONALNI TRENER, kao i njihovo skladištenje u bazama podataka našeg preduzeća PERSONAL TRAINER doo. Naša politika privatnosti obuhvata razloge kako i zašto sakupljamo, koristimo i štitimo Vaše lične podatke.
+      </p>
+      <p>
+        Zadržavamo diskreciono pravo da ovu Politiku privatnosti možemo izmeniti u svako doba i da tako izmenjen tekst postane važeći odmah po objavi istog na Web sajtu.
+      </p>
+      <p>
+        Nastavak Vašeg korišćenja aplikacije nakon izmena, podrazumeva da prihvatate sve uslove tako izmenjene Politike privatnosti. Stoga savetujemo korisnike da periodično ponovo detaljno pročitaju informacije sadržane u Politici privatnosti, kako bi bili informisani o eventualnim promenama.
+      </p>
+      <p>
+        Tokom Vaše posete sajtu možemo prikupiti vaše lične podatke koje su neophodne da podesite svoj nalog, u svrhu naplate ili isporuke Vaše robe. Vaše lične podatke koristimo isključivo i samo kako bi nam omogućili da Vam obezbedimo proizvode i usluge koje želite radi zadovoljenja Vaših zahteva ili da Vam prilagodimo našu ponudu, tj. da je personalizujemo, unapredili rad Web sajta, osigurali proveru administrativnih zadataka, uspostavili kontakt sa Vama, poboljšali naše oglašivačke i promotivne rezultate i poboljšali našu ponudu proizvoda ili usluga na tržištu, kao i u svrhu saradnje sa institucijama odgovornim za sprovođenje zakona.
+      </p>
+      <p>
+        Mi ne prodajemo i ne iznajmljujemo Vaše lične podatke trećim licima, za njihove marketinške potrebe a da prethodno nismo Vama dali mogućnost da tu opciju isključite. Međutim, mi možemo otkriti Vaše podatke našim poslovnim jedinicama i partnerima, koji su deo ove Politike privatnosti. Nikada i ni pod kojim uslovima nećemo zloupotrebiti Vaše lične podatke. U sledećim odeljcima ćemo Vam izložiti načine i razloge za moguće davanje Vaših informacija, za potrebe normalnog poslovanja Web sajta.
+      </p>
+    </div>
+  </div>
+</body>
+</html>

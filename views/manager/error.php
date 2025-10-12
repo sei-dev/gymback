@@ -2,60 +2,106 @@
 header("Refresh: 4; URL=myapp://paymentresult?status=error");
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Redirecting...</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Error</title>
   <style>
     body {
-      background: #EBF0F5;
-      text-align: center;
-      padding: 40px;
-      font-family: "Helvetica Neue", sans-serif;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #EBF0F5, #FFD9D9);
+      font-family: "Helvetica Neue", -apple-system, BlinkMacSystemFont, sans-serif;
+      color: #333;
     }
 
     .card {
       background: white;
-      padding: 60px;
-      border-radius: 10px;
-      display: inline-block;
-      box-shadow: 0 2px 3px #C8D0D8;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      width: 90%;
+      max-width: 400px;
+      text-align: center;
+      margin: 1rem;
     }
 
-    .checkmark-circle {
-      height: 200px;
-      width: 200px;
-      background: #f4f4f47d;
+    .error-circle {
+      width: 25vw;
+      max-width: 120px;
+      height: 25vw;
+      max-height: 120px;
+      background: rgba(255, 0, 0, 0.1);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin: 0 auto 20px auto;
+      margin: 0 auto 1.5rem;
+      animation: pulse 1.5s ease-in-out infinite;
     }
 
-    .checkmark {
-      font-size: 100px;
-      color: #0061FF;
+    .error-icon {
+      font-size: 3.5rem;
+      color: #FF0000;
       line-height: 1;
     }
 
     h1 {
-      color: #0061FF;
-      font-size: 36px;
-      margin-bottom: 10px;
+      color: #FF0000;
+      font-size: 2rem;
+      margin: 0 0 0.5rem;
+      font-weight: 500;
     }
 
     p {
-      color: #333;
-      font-size: 18px;
+      font-size: 1rem;
+      color: #555;
+      margin: 0;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+
+    @media (max-width: 600px) {
+      .card {
+        padding: 1.5rem;
+      }
+
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      p {
+        font-size: 0.9rem;
+      }
+
+      .error-circle {
+        width: 30vw;
+        height: 30vw;
+        max-width: 100px;
+        max-height: 100px;
+      }
+
+      .error-icon {
+        font-size: 2.5rem;
+      }
     }
   </style>
 </head>
 <body>
   <div class="card">
-    <div class="checkmark-circle">
-      <span class="checkmark">X</span>
+    <div class="error-circle">
+      <span class="error-icon">✗</span>
     </div>
-    <h1>Error</h1> 
+    <h1>Payment Failed</h1>
     <p>Redirecting back to the app...</p>
   </div>
 </body>
