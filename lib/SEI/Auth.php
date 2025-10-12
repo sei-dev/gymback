@@ -219,7 +219,7 @@ class Auth {
      */
     public function findUserByEmail(string $email){
         $sql = 'SELECT id, email, password
-                FROM users
+                FROM admin
                 WHERE email = :email';
         
         $statement = $this->getDbAdapter()->prepare($sql);
