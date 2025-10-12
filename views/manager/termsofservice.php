@@ -81,6 +81,7 @@ header('Content-Type: text/html; charset=utf-8');
   <div class="container">
     <h1>Uslovi Korišćenja i Politika Privatnosti</h1>
 
+<br><br>
     <div class="section">
       <h2>Uslovi Korišćenja</h2>
       <p>
