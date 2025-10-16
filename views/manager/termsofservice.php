@@ -138,8 +138,8 @@ header('Content-Type: text/html; charset=utf-8');
         
         <p>Sva plaćanja će biti obavljena u dinarima (RSD). Ukoliko se plaća platnim karticama inostranih banaka izdavalaca, dinarski iznos transakcije će biti konvertovan u settlement valutu banke (EUR) prema kursu Narodne banke Srbije. Pri zaduživanju Vaše platne kartice, već konvertovan iznos će se konvertovati u Vašu lokalnu valutu, prema kursu koji primenjuju operatori platnih kartica.</p>
         
-        <p>Sva plaćanja biće izvršena u lokalnoj valuti Republike Srbije – dinar (RSD). Za informativni prikaz cena u drugim valutama koristi se srednji kurs Narodne banke Srbije. Iznos za koji će biti zadužena Vaša platna kartica biće izražen u Vašoj lokalnoj valuti kroz konverziju u istu po kursu koji koriste kartičarske organizacije, a koji nama u trenutku transakcije ne može biti poznat. Kao rezultat ove konverzije postoji mogućnost neznatne razlike od originalne cene navedene na našem sajtu.</p>
-              	
+        <p>Sva plaćanja biće izvršena u lokalnoj valuti Republike Srbije – dinar (RSD). Za informativni prikaz cena u drugim valutama koristi se srednji kurs Narodne banke Srbije. Iznos za koji će biti zadužena Vaša platna kartica biće izražen u Vašoj lokalnoj valuti kroz konverziju u istu po kursu koji koriste kartičarske organizacije, a koji nama u trenutku transakcije ne može biti poznat. Kao rezultat ove konverzije postoji mogućnost neznatne razlike od originalne cene navedene na našem sajtu.</p><br>
+        <p>Kada se podaci o kartici kupca, na njegov zahtev ili odlukom trgovca TOKENIZUJU, (sačuvaju na sertifikovan način za kasnije korišćenje), ti podaci se čuvaju na AllSecure PCI-DSS level 1 sertifikovanim serverima. Tako tokenizovani kartični podaci se prenose na potpuno bezbedan i sertifikovan način. Trgovac ni u jednom trenutku nema pristup podacima o broju kartice i drugim osetljivim podacima, već dobija referentni broj (token) koji samo on može koristiti u skladu sa uslovima ugovorenim sa kupcem. Kupac ima mogućnost deregistracije prethodno registrovane kartice, kao i promene detalja ranije tokenizovane kartice.</p> 	
     </div>
   </div>
 </body>
