@@ -118,31 +118,24 @@ header('Content-Type: text/html; charset=utf-8');
     </div>
     <div class="section">
       <h2>Izjave prodavca</h2>
-      <h3>Plaćanje proizvoda</h3>
         <p>Plaćanje proizvoda na našoj internet prodavnici je moguće izvršiti na jedan od sledećih načina: platnim karticama - VISA, Maestro, Dina ili MasterCard koje podržavaju plaćanje preko Interneta. Plaćanje karticama je realizovano u saradnji sa AllSecure doo i Reiffeisen banka i obavlja se na bezbedan i sertifikovan način preko AllSecure Paymet Gateway-a, jednostavnim unosom podataka sa platne kartice.</p>
         
-        <h3>Proces plaćanja</h3>
         <p>Nakon što se unesu podaci o kartici i potvrdi plaćanje, banka autorizuje transakciju i time je porudžbina odobrena i ulazi u dalji proces pripreme za isporuku. Iznos će biti rezervisan na vašoj kartici (računu) i neće Vam biti raspoloživ za drugu namenu.</p>
         
         <p>Transkacija će biti kompletirana i iznos skinut sa vašeg računa tek kada su proizvodi pripremljeni za transport i predati kurirskoj službi. U slučaju da se plaćanje ne kompletira, odnosno iznos se ne skine sa računa do isteka 14 dana od prihvatanja Vaše porudžbine, ta porudžbenica će biti otkazana i izbrisana. Nakon isteka roka od 14 dana, novac rezervisan na Vašem računu se oslobađa i biće Vam ponovo na raspolaganju. Nakon toga možete ponoviti istu ili novu porudžbinu i izvršiti plaćanje vezano za njih.</p>
         
         <p>Proverite kod banke koja je karticu izdala da li Vaša kartica podržava plaćanje preko Interneta.</p>
         
-        <h3>Sigurnost plaćanja</h3>
         <p>Prilikom unošenja podataka o platnoj kartici, poverljive informacije se prenose putem javne mreže u zaštićenoj (kriptovanoj) formi upotrebom SSL protokola, primenom najsavremenijih metoda tokenizacije osetljivih podataka, i u skladu sa PCI-DSS standardima. Niti jednog trenutka podaci o platnoj kartici nisu dostupni trgovcu.</p>
         
-        <h3>3D Secure zaštita</h3>
         <p>3D Secure zaštita za sve trgovce i kupce - AllSecure Payment Gateway koristi najviše globalne standarde zaštite i privatnosti podataka. Svi trgovci koji koriste AllSecure Payment Gateway su automatski uključeni u 3D-Secure zaštitu, čime se kupcima garantuje bezbednost kupovine. Brojevi platnih kartica kupaca se ne čuvaju na sistemu trgovca, a sami upis se štiti SSL enkripcijom podataka.</p>
         
-        <h3>PCI DSS standardi</h3>
         <p>AllSecure Payment Gateway se konstantno usaglašava sa svim zahtevima kartičarskih organizacija u cilju povećanja nivoa bezbednosti trgovaca i kupaca. Od 2005. godine do danas, bez prekida, sistem je sertifikovan kao PCI-DSS Level 1 što predstavlja najviši standard u industriji.</p>
         
         <p>PCI Data Security Standard (PCI-DSS) je norma koja definiše neophodne mere bezbednosti pri obradi, čuvanju i prenošenju osetljivih kartičarskih podataka. PCI Standardima se štite osetljivi podaci o korisniku kartice tokom celog procesa plaćanja: od momenta unosa podataka na prodajnom mestu trgovca, tokom komunikacija između trgovca i relevantnih banaka i kartičarskih organizacija, kao i kasnije čuvanje tih podataka.</p>
         
-        <h3>Povraćaj sredstava</h3>
         <p>U slučaju povraćaja sredstava kupcu koji je prethodno platio nekom od platnih kartica, delimično ili u celosti, a bez obzira na razlog vraćanja, taj povraćaj se vrši isključivo preko iste VISA, Maestro ili MasterCard kartice koja je korišćena za plaćanje. Ovo znači da će naša banka na naš zahtev obaviti povraćaj sredstava na račun korisnika kartice.</p>
         
-        <h3>Izjava o konverzijama</h3>
         <p>Sva plaćanja će biti obavljena u dinarima (RSD). Ukoliko se plaća platnim karticama inostranih banaka izdavalaca, dinarski iznos transakcije će biti konvertovan u settlement valutu banke (EUR) prema kursu Narodne banke Srbije. Pri zaduživanju Vaše platne kartice, već konvertovan iznos će se konvertovati u Vašu lokalnu valutu, prema kursu koji primenjuju operatori platnih kartica.</p>
         
         <p>Sva plaćanja biće izvršena u lokalnoj valuti Republike Srbije – dinar (RSD). Za informativni prikaz cena u drugim valutama koristi se srednji kurs Narodne banke Srbije. Iznos za koji će biti zadužena Vaša platna kartica biće izražen u Vašoj lokalnoj valuti kroz konverziju u istu po kursu koji koriste kartičarske organizacije, a koji nama u trenutku transakcije ne može biti poznat. Kao rezultat ove konverzije postoji mogućnost neznatne razlike od originalne cene navedene na našem sajtu.</p>
