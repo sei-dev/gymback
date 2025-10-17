@@ -134,7 +134,7 @@ header('Content-Type: text/html; charset=utf-8');
         
         <p>PCI Data Security Standard (PCI-DSS) je norma koja definiše neophodne mere bezbednosti pri obradi, čuvanju i prenošenju osetljivih kartičarskih podataka. PCI Standardima se štite osetljivi podaci o korisniku kartice tokom celog procesa plaćanja: od momenta unosa podataka na prodajnom mestu trgovca, tokom komunikacija između trgovca i relevantnih banaka i kartičarskih organizacija, kao i kasnije čuvanje tih podataka.</p>
         
-        <p>U slučaju povraćaja sredstava kupcu koji je prethodno platio nekom od platnih kartica, delimično ili u celosti, a bez obzira na razlog vraćanja, taj povraćaj se vrši isključivo preko iste VISA, Maestro ili MasterCard kartice koja je korišćena za plaćanje. Ovo znači da će naša banka na naš zahtev obaviti povraćaj sredstava na račun korisnika kartice.</p>
+        <p>U slučaju povraćaja sredstava kupcu koji je prethodno platio nekom od platnih kartica, delimično ili u celosti, a bez obzira na razlog vraćanja, taj povraćaj se vrši isključivo preko iste VISA, Maestro, Dina ili MasterCard kartice koja je korišćena za plaćanje. Ovo znači da će naša banka na naš zahtev obaviti povraćaj sredstava na račun korisnika kartice.</p>
         
         <p>Sva plaćanja će biti obavljena u dinarima (RSD). Ukoliko se plaća platnim karticama inostranih banaka izdavalaca, dinarski iznos transakcije će biti konvertovan u settlement valutu banke (EUR) prema kursu Narodne banke Srbije. Pri zaduživanju Vaše platne kartice, već konvertovan iznos će se konvertovati u Vašu lokalnu valutu, prema kursu koji primenjuju operatori platnih kartica.</p>
         
