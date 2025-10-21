@@ -21,7 +21,7 @@
 
     <?php foreach ($this->items as $one): ?>
         <div class="row">
-            <div class="col-md-2"><?=$one["trainer_name"]?></div>
+            <div class="col-md-2"><?= $one["trainer_name"] ?? "" ?></div>
             <div class="col-md-2"><?=$one["client_name"]?></div>
             <div class="col-md-2"><?=$one["height"] . " cm"?></div>
             <div class="col-md-2"><?=$one["weight"] . " cm"?></div>
