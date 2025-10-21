@@ -177,7 +177,7 @@ class Manager extends Controller
         $model = new Invoices();
 
         $data["items"] = $model->getUserInvoices($id, $_GET["page"] ?? 1);
-        $count = count($data["items"]);
+        $count = $model->getTotalCountByUserId($id);
         $data["pagination"] = $this->getPagination("/manager/invoices", $count, 10);
         $data["count"] = $count;
 

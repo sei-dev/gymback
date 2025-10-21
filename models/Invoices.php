@@ -79,6 +79,11 @@ class Invoices extends ModelAbstract implements ModelInterface
 	    return $this->fetchAll($sQuery)['0']["total"];
 	}
 	
+	public function getTotalCountByUserId(string $id) {
+	    $sQuery = "SELECT COUNT(*) as total FROM invoices WHERE trainer_id={$id}";
+	    return $this->fetchAll($sQuery)['0']["total"];
+	}
+	
 	/* public function addCity(string $name) {
 	    
 	    $sQuery = "INSERT INTO cities (city)
