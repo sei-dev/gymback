@@ -118,20 +118,23 @@ class Controller {
             $start = max(1, $pages - 6);
         }
         
+        // Determine the separator (? or &) based on whether the URL already has a query string
+        $separator = strpos($url, '?') !== false ? '&' : '?';
+        
         if ($page > 1) {
-            $html .= '<li><a href="' . $url . '?page=' . ($page - 1) . '">«</a></li>';
+            $html .= '<li><a href="' . $url . $separator . 'page=' . ($page - 1) . '">«</a></li>';
         }
         
         for ($i = $start; $i <= $end; $i++) {
             if ($i == $page) {
-                $html .= '<li class="active"><a href="' . $url . '?page=' . $i . '"><span>' . $i . '</span></a></li>';
+                $html .= '<li class="active"><a href="' . $url . $separator . 'page=' . $i . '"><span>' . $i . '</span></a></li>';
             } else {
-                $html .= '<li><a href="' . $url . '?page=' . $i . '">' . $i . '</a></li>';
+                $html .= '<li><a href="' . $url . $separator . 'page=' . $i . '">' . $i . '</a></li>';
             }
         }
         
         if ($page < $pages) {
-            $html .= '<li><a href="' . $url . '?page=' . ($page + 1) . '">»</a></li>';
+            $html .= '<li><a href="' . $url . $separator . 'page=' . ($page + 1) . '">»</a></li>';
         }
         
         $html .= '</ul>';
