@@ -22,15 +22,15 @@
     <?php foreach ($this->items as $one): ?>
         <div class="row">
             <div class="col-md-2"><?= $one["trainer_name"] ?? "" ?></div>
-            <div class="col-md-2"><?=$one["client_name"]?></div>
-            <div class="col-md-2"><?=$one["height"] . " cm"?></div>
-            <div class="col-md-2"><?=$one["weight"] . " cm"?></div>
-            <div class="col-md-2"><?=$one["waist"] . " cm"?></div>
-            <div class="col-md-2"><?=$one["biceps"] . " cm"?></div>
-            <div class="col-md-2"><?=$one["neck"] . " cm"?></div>
-            <div class="col-md-2"><?=$one["chest"] . " cm"?></div>
-            <div class="col-md-2"><?=$one["gluteus"] . " cm"?></div>
-            <div class="col-md-2"><?=$one["lower_leg"] . " cm"?></div>
+            <div class="col-md-2"><?=$one["client_name"] ?? ""?></div>
+            <div class="col-md-2"><?=$one["height"] ?? "" . " cm"?></div>
+            <div class="col-md-2"><?=$one["weight"] ?? "" . " cm"?></div>
+            <div class="col-md-2"><?=$one["waist"] ?? "" . " cm"?></div>
+            <div class="col-md-2"><?=$one["biceps"] ?? "" . " cm"?></div>
+            <div class="col-md-2"><?=$one["neck"] ?? "" . " cm"?></div>
+            <div class="col-md-2"><?=$one["chest"] ?? "" . " cm"?></div>
+            <div class="col-md-2"><?=$one["gluteus"] ?? "" . " cm"?></div>
+            <div class="col-md-2"><?=$one["lower_leg"] ?? "" . " cm"?></div>
             <div class="col-md-1 label label-danger">
                 <i class="fa fa-clock-o"></i> <?=$this->humanReadable($one["measured_at"])?>
             </div>
