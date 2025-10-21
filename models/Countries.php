@@ -66,6 +66,11 @@ class Countries extends ModelAbstract implements ModelInterface
 	    return $this->fetchAll($sQuery);
 	}
 	
+	public function getTotalCount() {
+	    $sQuery = "SELECT COUNT(*) as total FROM countries";
+	    return $this->fetchAll($sQuery)['0']["total"];
+	}
+	
 	/**
 	 *
 	 * @param array $data
