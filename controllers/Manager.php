@@ -250,7 +250,7 @@ class Manager extends Controller
         $model = new Countries();
 
         $data["items"] = $model->getAll($_GET["page"] ?? 1);
-        $count = $model->count();
+        $count = $model->getTotalCount();
         $data["pagination"] = $this->getPagination("/manager/countries", $count, 10);
         $data["count"] = $count;
 
