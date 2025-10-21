@@ -117,7 +117,7 @@ class Manager extends Controller
             $last_name = $_POST["last_name"];
             $email = $_POST["email"];
             $phone = $_POST["phone"];
-            $location = $_POST["location"];
+            $location = $_POST["city"];
             $deadline = $_POST["deadline"];
 
             $model->upadateUser($id, $first_name, $last_name, $email, $phone, $location, $deadline);

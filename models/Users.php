@@ -79,7 +79,7 @@ class Users extends ModelAbstract implements ModelInterface
 	   
 	    $sQuery = "UPDATE users
 				SET first_name = '{$first_name}', last_name = '{$last_name}', email = '{$email}',
-                phone = '{$phone}', location = '{$location}', deadline = '{$deadline}'
+                phone = '{$phone}', city_id = '{$location}', deadline = '{$deadline}'
                 WHERE id = '{$id}'
 				";
 	    return $this->fetchAll($sQuery);
