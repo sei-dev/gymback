@@ -64,6 +64,14 @@ class Measurements extends ModelAbstract implements ModelInterface
 	    return $this->fetchAll($sQuery);
 	}
 	
+	public function getTotalUserMeasurements(string $id) {
+	    $sQuery = "SELECT COUNT(*) as total
+               FROM " . self::getTablePrefix() . $this->table . "
+               WHERE trainer_id = '{$id}' OR client_id = '{$id}'";
+	    $result = $this->fetchAll($sQuery);
+	    return (int) $result[0]['total'];
+	}
+	
 	public function removeMeasurement(string $id){
 	    
 	    $sQuery = "DELETE FROM ".self::getTablePrefix().$this->table." WHERE id='{$id}'";

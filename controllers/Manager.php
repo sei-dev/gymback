@@ -220,7 +220,7 @@ class Manager extends Controller
             $e ++;
         }
 
-        $count = count($data["items"]);
+        $count = $model->getTotalUserMeasurements($id);
         $data["pagination"] = $this->getPagination("/manager/measurements", $count, 10);
         $data["count"] = $count;
 
