@@ -161,7 +161,7 @@ class Manager extends Controller
 
         $data["items"] = $model->getUserGyms($id, $_GET["page"] ?? 1);
         $count = count($data["items"]);
-        $data["pagination"] = $this->getPagination("/manager/gyms", $count, 10);
+        $data["pagination"] = $this->getPagination("/manager/usergyms?id=". $id, $count, 10);
         $data["count"] = $count;
 
         // die(var_dump($data["users"]));
@@ -221,7 +221,7 @@ class Manager extends Controller
         }
 
         $count = $model->getTotalUserMeasurements($id);
-        $data["pagination"] = $this->getPagination("/manager/measurements", $count, 10);
+        $data["pagination"] = $this->getPagination("/manager/usermeasurements?id=". $id, $count, 10);
         $data["count"] = $count;
 
         // die(var_dump($data["users"]));
