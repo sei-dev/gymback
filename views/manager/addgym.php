@@ -25,7 +25,7 @@
                         <select placeholder="<?=$this->translate("Country");?>" class="form-control country-select" name="country">
                             <option value=""><?=$this->translate("Select Country");?></option>
                             <?php foreach ($this->countries as $country):?>
-                                <option value="<?=$country["id"]?>"><?=$country["name"]?></option>
+                                <option value="<?=$country["id"]?>"><?=$country["country"]?></option>
                             <?php endforeach;?>
                         </select>
                     </div>
