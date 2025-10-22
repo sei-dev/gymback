@@ -512,24 +512,39 @@ class Manager extends Controller
     public function updategym()
     {
         $model = new Gyms();
+        $cityModel = new Cities();
+        $countryModel = new Countries();
         
         if ($this->isPost()) {
-            $id = $_POST["id"];
-            $name = $_POST["name"];
-            $address = $_POST["address"];
-            $city = $_POST["city"];
-            $country = $_POST["country"];
-            $phone = $_POST["phone"];
+            $id = $_POST["id"] ?? null;
+            $name = $_POST["name"] ?? '';
+            $address = $_POST["address"] ?? '';
+            $city = $_POST["city"] ?? null;
+            $country = $_POST["country"] ?? null;
+            $phone = $_POST["phone"] ?? '';
             
-            $model->updateGym($id, $name, $address, $city, $country, $phone);
-            
-            $this->redirect("/manager/gyms");
-        } else if ($this->isGet()) {
-            $data["messages"] = @$_SESSION["messages"];
-            $cityModel = new Cities();
-            $countryModel = new Countries();
-            $data['cities'] = $cityModel->getAll();
-            $data['countries'] = $countryModel->getAll();
+            if ($id && $country && $city) {
+                $model->updateGym($id, $name, $address, $city, $country, $phone);
+                $this->redirect("/manager/gyms");
+            } else {
+                $_SESSION["messages"] = ["error" => "ID, Country, and City are required"];
+            }
+        }
+        
+        $data["messages"] = $_SESSION["messages"] ?? [];
+        $data['countries'] = $countryModel->getAll();
+        $data['gym'] = $model->getGymById($_GET['id'] ?? 0); // Assuming a method to fetch gym by ID
+        
+        if (empty($data['countries'])) {
+            error_log('Countries array is empty in updategym');
+            $data['countries'] = [];
+        } else {
+            error_log('Countries data in updategym: ' . print_r($data['countries'], true));
+        }
+        
+        if (empty($data['gym'])) {
+            error_log('Gym data not found for ID: ' . ($_GET['id'] ?? 'unknown'));
+            $data['gym'] = ['id' => '', 'name' => '', 'address' => '', 'city_id' => '', 'country_id' => '', 'phone' => ''];
         }
         
         echo $this->render->view('manager/editgym', $data);
