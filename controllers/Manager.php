@@ -478,8 +478,8 @@ class Manager extends Controller
         $cityModel = new Cities();
         $countryModel = new Countries();
         
-        $data['cities'] = $cityModel->getAll();
-        $data['countries'] = $countryModel->getAll();
+        $data['cities'] = $cityModel->getAll(1, 200, true);
+        $data['countries'] = $countryModel->getAll(1, 200, true);
         
         echo $this->render->view('manager/addgym', $data);
     }
