@@ -66,6 +66,13 @@ class Cities extends ModelAbstract implements ModelInterface
 	    return $this->fetchAll($sQuery);
 	}
 	
+	public function getCitiesByCountryId(string $id){
+	    $sQuery = "SELECT * FROM cities WHERE country_id={$id}
+				";
+	    
+	    return $this->getDbAdapter()->query($sQuery)->fetchAll(\PDO::FETCH_ASSOC);
+	}
+	
 	public function getTotalCount() {
 	    $sQuery = "SELECT COUNT(*) as total FROM cities";
 	    return $this->fetchAll($sQuery)['0']["total"];

@@ -475,54 +475,75 @@ class Manager extends Controller
 
     public function addGym()
     {
-        $model = new Cities();
-
-        $data['cities'] = $model->getAll();
-
+        $cityModel = new Cities();
+        $countryModel = new Countries();
+        
+        $data['cities'] = $cityModel->getAll();
+        $data['countries'] = $countryModel->getAll();
+        
         echo $this->render->view('manager/addgym', $data);
     }
-
+    
     public function insertgym()
     {
         $model = new Gyms();
-
+        
         if ($this->isPost()) {
-
+            $country_id = $_POST["country"];
             $city_id = $_POST["city"];
             $name = $_POST["name"];
             $address = $_POST["address"];
             $phone = $_POST["phone"];
-
-            $model->addGym($name, $address, $city_id, $phone);
-
+            
+            $model->addGym($name, $address, $city_id, $country_id, $phone);
+            
             $this->redirect("/manager/gyms");
         } else if ($this->isGet()) {
             $data["messages"] = @$_SESSION["messages"];
+            $cityModel = new Cities();
+            $countryModel = new Countries();
+            $data['cities'] = $cityModel->getAll();
+            $data['countries'] = $countryModel->getAll();
         }
-
+        
         echo $this->render->view('manager/addgym', $data);
     }
-
+    
     public function updategym()
     {
         $model = new Gyms();
-
+        
         if ($this->isPost()) {
-
             $id = $_POST["id"];
             $name = $_POST["name"];
             $address = $_POST["address"];
             $city = $_POST["city"];
+            $country = $_POST["country"];
             $phone = $_POST["phone"];
-
-            $model->upadateGym($id, $name, $address, $city, $phone);
-
+            
+            $model->updateGym($id, $name, $address, $city, $country, $phone);
+            
             $this->redirect("/manager/gyms");
         } else if ($this->isGet()) {
             $data["messages"] = @$_SESSION["messages"];
+            $cityModel = new Cities();
+            $countryModel = new Countries();
+            $data['cities'] = $cityModel->getAll();
+            $data['countries'] = $countryModel->getAll();
         }
-
+        
         echo $this->render->view('manager/editgym', $data);
+    }
+    
+    public function getCitiesByCountry()
+    {
+        $cityModel = new Cities();
+        $countryId = $_POST['country_id'] ?? 0;
+        
+        $cities = $cityModel->getCitiesByCountryId($countryId);
+        header('Content-Type: application/json');
+        echo json_encode($cities);
+        exit;
     }
 
     public function updatesubscription()
