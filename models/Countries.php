@@ -39,7 +39,7 @@ class Countries extends ModelAbstract implements ModelInterface
 	 * @param string $email
 	 * @return array
 	 */
-	public function getAll(int $page = 1, int $perPage = 10) {
+	public function getAll(int $page = 1, int $perPage = 10, , bool $fetchAll = false) {
 	    
 	    $start = ($page-1) * $perPage;
 		
@@ -48,6 +48,11 @@ class Countries extends ModelAbstract implements ModelInterface
 				WHERE 1
                 LIMIT {$start}, {$perPage}
 				";
+		
+		if (!$fetchAll) {
+		    $start = ($page - 1) * $perPage;
+		    $sQuery .= " LIMIT {$start}, {$perPage}";
+		}
 		return $this->fetchAll($sQuery);
 	}
 	
