@@ -98,6 +98,12 @@ class Gyms extends ModelAbstract implements ModelInterface
 	    return $this->fetchAll($sQuery);
 	}
 	
+	public function getTotal(){
+	    
+	    $sQuery = "SELECT COUNT(*) as total FROM gyms";
+	    return $this->fetchAll($sQuery)['0']["total"];
+	}
+	
 	/**
 	 *
 	 * @param string $email
